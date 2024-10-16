@@ -13,6 +13,6 @@
 
 ### 使用的第三方API
 ***
-[pushplus推送](https://www.pushplus.plus/doc/#%E5%BC%95%E8%A8%80)、[helloimg图床](https://www.helloimg.com/)
+[pushplus推送](https://www.pushplus.plus/push1.html)、[helloimg图床](https://www.helloimg.com/)。两个api均需要实名认证才能正常调用。
 
 
