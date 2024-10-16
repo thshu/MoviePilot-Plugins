@@ -1,10 +1,10 @@
-
 ### 简介 
-在原来原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了两个第三方应用的api和一个上传cookie的类
+***
+在原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了两个第三方应用的api
 
 两个第三方api主要缓解以下问题：
 
-1. 需要经常在异地使用企业微信的用户cookie导致经常失效，要在异地电脑安装、配置CookieCloud重新上传cookie频繁的问题
+1. 需要经常外出使用企业微信的用户，cookie容易失效，要在异地电脑安装、配置CookieCloud重新上传cookie频繁的问题
 2. 在仅有手机微信的情况下更新cookie相对麻烦
 
 触发使用两个第三方API的条件：
