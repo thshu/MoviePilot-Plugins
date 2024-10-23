@@ -15,5 +15,6 @@
 [pushplus推送](https://www.pushplus.plus/push1.html)、[helloimg图床](https://www.helloimg.com/)。两个api均需要实名认证才能正常调用。配置后才可以正常使用`/push_qr`
 
 ### 远程命令
+* 检测周期建议设置` */10 * * * *`，10分钟检测一次IP。pushplus目前每日限制200条消息，又因为二维码有效期为2分钟左右。用户可能会有8分钟在等待二维码，所以添加了`/push_qr`，也可以用来随时随地刷新cookie
 
 
