@@ -10,7 +10,7 @@
 触发使用两个第三方API的条件：`IP变化` 且 `从CookieCloud获取的cookie失效` 且 `填写两个token`。
 
 
-#### 使用的第三方API
+#### 两个可选使用的第三方API
 ***
 [pushplus推送](https://www.pushplus.plus/push1.html)、[helloimg图床](https://www.helloimg.com/)。两个api均需要实名认证才能正常调用。配置后才可以正常使用`/push_qr`
 
