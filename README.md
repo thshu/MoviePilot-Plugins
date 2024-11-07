@@ -10,11 +10,21 @@
 触发使用两个第三方API的条件：`IP变化` 且 `从CookieCloud获取的cookie失效` 且 `填写两个token`。
 
 
-### 使用的第三方API
+#### 使用的第三方API
 ***
 [pushplus推送](https://www.pushplus.plus/push1.html)、[helloimg图床](https://www.helloimg.com/)。两个api均需要实名认证才能正常调用。配置后才可以正常使用`/push_qr`
 
-#### 远程命令
-* 检测周期建议设置` */10 * * * *`，10分钟检测一次IP。pushplus目前每日限制200条消息，又因为二维码有效期为2分钟左右。用户可能会有8分钟在等待二维码，所以添加了`/push_qr`，也可以用来随时主动刷新cookie
+##### 远程命令
+* **检测周期**建议设置` */10 * * * *`，10分钟检测一次IP。pushplus目前每日限制200条消息，又因为二维码有效期为2分钟左右。用户可能会有8分钟在等待二维码，所以添加了`/push_qr`，也可以用来随时主动刷新cookie
 
+
+### 使用说明
+***
+需要配置两个参数，1. 获取应用ID  2. 启用CookieCloud
+
+1. 获取应用ID，**红线部分就是应用ID**
+![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%BA%94%E7%94%A8ID.JPG)
+
+2. 启用CookieCloud，**勾选“启用本地...”就是使用内建CC**
+![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/CC.JPG)
 
