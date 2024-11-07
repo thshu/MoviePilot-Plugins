@@ -20,7 +20,7 @@
 
 ### 使用说明
 ***
-需要配置两个参数，1. 获取应用ID  2. 启用CookieCloud
+需要获取一个参数和配置CookieCloud
 
 1. 获取应用ID，**红线部分就是应用ID**
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%BA%94%E7%94%A8ID.JPG)
