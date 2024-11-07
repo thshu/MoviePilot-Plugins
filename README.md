@@ -25,6 +25,6 @@
 1. 获取应用ID，**红线部分就是应用ID**
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%BA%94%E7%94%A8ID.JPG)
 
-2. 启用CookieCloud，**勾选“启用本地...”就是使用内建CC**
+2. 启用CookieCloud，**勾选“启用本地...”就是使用内建CookieCloud**
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/CC.JPG)
 
