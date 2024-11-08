@@ -11,7 +11,6 @@
 
 
 #### 两个可选使用的第三方API
-***
 [pushplus推送](https://www.pushplus.plus/push1.html)、[helloimg图床](https://www.helloimg.com/)。两个api均需要实名认证才能正常调用。配置后才可以正常使用`/push_qr`
 
 ##### 远程命令
