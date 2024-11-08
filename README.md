@@ -22,7 +22,7 @@
 ***
 需要获取一个参数和配置CookieCloud
 
-1. 获取应用ID，地址栏的末尾，图中**红线部分就是应用ID**
+1. 获取应用ID，图中地址栏的末尾**红线部分就是应用ID**
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%BA%94%E7%94%A8ID.JPG)
 
 2. 启用CookieCloud，在MoviePilot的`设定`→`站点`中勾选 **“启用本地Cookiecloud服务器”**，即使用内建CookieCloud
