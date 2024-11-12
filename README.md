@@ -31,8 +31,10 @@
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/CC.JPG)
 
 3. 使用企业微信应用接收示例，如果使用其他第三方推送则将图中`WeChat`替换成相应Token/API。
-![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/wechat.JPG)
-\*AnPush需要推送通道，则使用英文逗号分隔。如：`推送通道ID,API`
+![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/wechat.JPG) <br>
+\* Server酱填写SCT开头的SendKey <br>
+\* AnPush需要推送通道ID，使用英文逗号分隔。如：`推送通道ID,API` <br>
+\* pushplus填写一键复制的token <br>
 
 
 ### 问题反馈
