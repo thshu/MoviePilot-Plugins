@@ -14,7 +14,7 @@
 
 #### 可选的通知API
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
-\* 使用企业微信应用通知，但要确保 **cookie失效** 到 **发送/push_qr** 这段时间，公网IP没有发生变化。以下有使用微信通知的示例图。
+\* 使用企业微信应用通知，注意确保 **cookie失效** 到 **发送/push_qr** 这段时间，公网IP没有发生变化。以下有使用微信通知的示例图。
 
 #### 远程命令
 `/push_qr`也可以用来随时主动刷新cookie
