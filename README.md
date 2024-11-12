@@ -12,7 +12,7 @@
 
 
 #### 可选的第三方API
-* [Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://www.helloimg.com/)、[pushplus推送](https://www.pushplus.plus/push1.html)。三选一。当然也可以使用`WeChat`但要确保动态IP还没有发生变化。配置任意一个后才可以正常使用`/push_qr`
+* [Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://www.helloimg.com/)、[pushplus推送](https://www.pushplus.plus/push1.html)。当然也可以使用`WeChat`但要确保动态IP还没有发生变化。配置任意一个后才可以正常使用`/push_qr`
 
 #### 远程命令
 * **检测周期**建议设置4分钟以上。如：` */10 * * * *`，10分钟检测一次IP。，所以添加了`/push_qr`，也可以用来随时主动刷新cookie
@@ -27,6 +27,10 @@
 
 2. 启用CookieCloud，在MoviePilot的`设定`→`站点`中勾选 **“启用本地Cookiecloud服务器”**，即使用内建CookieCloud
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/CC.JPG)
+
+3. 使用企业微信应用接收示例，如果使用其他第三方推送则将图中`WeChat`替换成相应Token/API。
+![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/wechat.JPG)
+\*AnPush需要推送通道，则使用英文逗号分隔。示例：`推送通道,API`
 
 
 ### 问题反馈
