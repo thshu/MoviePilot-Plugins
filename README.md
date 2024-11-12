@@ -13,7 +13,7 @@
 
 
 #### 可选的通知API
-* 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool))、[pushplus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
+* 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey、[AnPush](https://anpush.com/push/tool))、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
 \* 使用企业微信应用通知，但要确保 **cookie失效** 到 **发送/push_qr** 这段时间，公网IP没有发生变化。以下有使用微信通知的示例图。
 
 #### 远程命令
@@ -32,9 +32,10 @@
 
 3. 使用企业微信应用接收示例，如果使用其他第三方推送则将图中`WeChat`替换成相应Token/API。
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/wechat.JPG) <br>
+\* 企业微信直接填写WeChat(注意区分大小写)
 \* Server酱填写SCT开头的SendKey <br>
 \* AnPush需要推送通道ID，使用英文逗号分隔。如：`推送通道ID,API` <br>
-\* pushplus填写一键复制的token <br>
+\* PushPlus填写一键复制的token <br>
 
 
 ### 问题反馈
