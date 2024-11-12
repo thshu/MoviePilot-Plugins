@@ -14,7 +14,7 @@
 
 #### 可选的第三方通知API
 * [Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://www.helloimg.com/)、[pushplus推送](https://www.pushplus.plus/push1.html)。
-* 可以使用企业微信应用通知，但要确保`cookie失效`到你`发送/push_qr`这段时间，公网IP还没有发生变化。以下有使用微信通知的示例图。配置任意一个后才可以正常使用`/push_qr`
+* 可以使用企业微信应用通知，但要确保`cookie失效`到`发送/push_qr`这段时间，公网IP还没有发生变化。以下有使用微信通知的示例图。配置任意一个后才可以正常使用`/push_qr`
 
 #### 远程命令
 * **检测周期**建议设置4分钟以上。如：` */10 * * * *`，10分钟检测一次IP。，也可以用`/push_qr`来随时主动刷新cookie
