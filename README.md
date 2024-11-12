@@ -6,7 +6,7 @@
 第三方api主要缓解以下问题：
 
 1. 需要经常外出使用企业微信的用户，cookie容易失效，要在异地电脑安装、配置CookieCloud重新上传cookie频繁
-2. 在仅有手机微信的情况下更新cookie相对麻烦
+2. 在仅有手机微信的情况下更新cookie相对麻烦（原仓库更新后已支持二维码推送）
 3. 因没有及时扫码，期间公网IP又发生变化和可信IP不一致，导致企微应用无法发送通知
 
 
@@ -14,7 +14,7 @@
 
 #### 可选的通知API
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
-\* 使用企业微信应用通知，注意确保 **cookie失效** 到 **发送/push_qr** 这段时间，公网IP没有发生变化。以下有使用微信通知的示例图。
+\* 使用企业微信通知，注意确保 **cookie失效** 到 **发送/push_qr** 这段时间，公网IP没有发生变化。
 
 #### 远程命令
 `/push_qr`也可以用来随时主动刷新cookie
