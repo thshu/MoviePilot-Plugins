@@ -12,7 +12,8 @@
 
 
 #### 可选的第三方API
-* [Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://www.helloimg.com/)、[pushplus推送](https://www.pushplus.plus/push1.html)。当然也可以使用`WeChat`但要确保动态IP还没有发生变化。配置任意一个后才可以正常使用`/push_qr`
+* [Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://www.helloimg.com/)、[pushplus推送](https://www.pushplus.plus/push1.html)。
+* 可以使用`WeChat`但要确保cookie失效到你发送/push_qr这段时间，动态IP还没有发生变化。配置任意一个后才可以正常使用`/push_qr`
 
 #### 远程命令
 * **检测周期**建议设置4分钟以上。如：` */10 * * * *`，10分钟检测一次IP。，所以添加了`/push_qr`，也可以用来随时主动刷新cookie
