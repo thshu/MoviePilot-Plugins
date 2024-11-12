@@ -34,7 +34,7 @@
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/wechat.JPG) <br>
 \* 企业微信直接填写WeChat(注意区分大小写) <br>
 \* Server酱填写SCT开头的SendKey <br>
-\* AnPush需要推送通道ID，使用英文逗号分隔。如：`推送通道ID,API` <br>
+\* AnPush需要在左侧`通道配置`找到通道ID，填写 `通道ID,API` <br>
 \* PushPlus填写一键复制的token <br>
 
 
