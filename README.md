@@ -31,7 +31,7 @@
 
 3. 使用企业微信应用接收示例，如果使用其他第三方推送则将图中`WeChat`替换成相应Token/API。
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/wechat.JPG)
-\*AnPush需要推送通道，则使用英文逗号分隔。示例：`推送通道,API`
+\*AnPush需要推送通道，则使用英文逗号分隔。示例：`推送通道ID,API`
 
 
 ### 问题反馈
