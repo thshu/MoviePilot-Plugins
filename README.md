@@ -12,17 +12,17 @@
 
 
 
-#### 可选的第三方通知API
-* [Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://www.helloimg.com/)、[pushplus推送](https://www.pushplus.plus/push1.html)。
-* 可以使用企业微信应用通知，但要确保`cookie失效`到`发送/push_qr`这段时间，公网IP还没有发生变化。以下有使用微信通知的示例图。配置任意一个后才可以正常使用`/push_qr`
+#### 可选的通知API
+* 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://www.helloimg.com/)、[pushplus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
+\* 使用企业微信应用通知，但要确保 **cookie失效** 到 **发送/push_qr** 这段时间，公网IP没有发生变化。以下有使用微信通知的示例图。
 
 #### 远程命令
-* **检测周期**建议设置4分钟以上。如：` */10 * * * *`，10分钟检测一次IP。，也可以用`/push_qr`来随时主动刷新cookie
+`/push_qr`也可以用来随时主动刷新cookie
 
 
 ### 使用说明
 ***
-需要获取一个参数和配置CookieCloud
+需要获取一个参数和配置CookieCloud，**检测周期**建议设置4分钟以上。如：` */10 * * * *`，10分钟检测一次IP。
 
 1. 获取应用ID，图中地址栏的末尾**红线部分就是应用ID**
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%BA%94%E7%94%A8ID.JPG)
