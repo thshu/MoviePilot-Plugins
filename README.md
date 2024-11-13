@@ -14,7 +14,7 @@
 
 #### 可选的通知
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
-使用企业微信通知的用户没有收到消息，请确认可信IP和公网IP是否一致。
+使用企业微信通知的用户**没有收到消息**，请确认可信IP和公网IP是否一致。
 
 #### 远程命令
 `/push_qr`也可以用来随时主动刷新cookie
