@@ -1,7 +1,7 @@
 ### 简介 
 ***
 * 定时检查公网IP覆盖填写到企业微信“可信IP”列表中。确保微信通知可用
-* 在原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了第三方应用的api，扫码登录时收到验证码，请以`?`结尾发送到企业微信应用。如:`110103？`
+* 在原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了第三方api，扫码登录时收到验证码，请以`?`结尾发送到企业微信应用。如:`110103？`
 
 第三方api主要缓解以下问题：
 
@@ -12,7 +12,7 @@
 
 
 
-#### 可选的通知API
+#### 可选的通知
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
 使用企业微信通知的用户没有收到消息，请确认可信IP和公网IP是否一致。
 
