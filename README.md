@@ -32,10 +32,10 @@
 
 3. 使用企业微信应用接收示例，如果使用其他第三方推送则将图中`WeChat`替换成相应Token/API。
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/wechat.JPG) <br>
-\* 企业微信直接填写WeChat(注意区分大小写) <br>
-\* Server酱填写SCT开头的SendKey <br>
-\* AnPush需要在左侧`通道配置`找到通道ID，填写 `通道ID,API` <br>
-\* PushPlus填写一键复制的token <br>
+\* 企业微信：直接填写WeChat(注意区分大小写) <br>
+\* Server酱：填写SCT开头的SendKey，如果使用Server<sup>3</sup>请手动将key开头的sct替换成大写的SCT <br>
+\* AnPush：需要在左侧`通道配置`找到通道ID，填写 `通道ID,API` <br>
+\* PushPlus：填写一键复制的token <br>
 
 
 ### 问题反馈
