@@ -14,7 +14,7 @@
 
 #### 可选的通知
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
-使用企业微信通知的用户**没有收到消息**，请确认可信IP和公网IP是否一致。
+使用企业微信通知的用户，请先确认你的微信应用已经可以**正常交互**，本插件只负责修改可信IP。仍**没有收到消息**，请确认可信IP和公网IP是否一致或查看MP及插件日志。
 
 #### 远程命令
 * 直接在企业微信应用发送`/push_qr`，插件就会推送登录二维码。也可以用来随时主动刷新cookie或者**测试通知是否可用**
@@ -32,7 +32,7 @@
 
 3. 使用企业微信应用接收示例，如果使用其他第三方推送则将图中`WeChat`替换成相应Token/API。
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/wechat.JPG) <br>
-\* 企业微信：直接填写WeChat(注意区分大小写) <br>
+\* 企业微信：直接填写WeChat(注意区分大小写)，请先确认你的微信通知已可以**正常交互**，本插件只负责修改可信IP <br>
 \* Server酱：填写SCT开头的SendKey，如果使用Server<sup>3</sup>请手动将key开头的sct替换成大写的SCT <br>
 \* AnPush：需要在左侧`通道配置`找到通道ID，填写 `通道ID,API` <br>
 \* PushPlus：填写一键复制的token <br>
