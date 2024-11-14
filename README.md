@@ -14,7 +14,7 @@
 
 #### 可选的通知
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
-使用企业微信通知的用户，请先确认你的企微应用已经可以**正常交互**，本插件只负责修改可信IP。仍**没有收到消息**，请确认可信IP和公网IP是否一致或查看MP及插件日志。
+使用企业微信通知的用户，请先确认你的企微应用已经可以**正常交互**，本插件只负责修改可信IP。**没有收到消息**，请确认可信IP和公网IP是否一致或查看MP及插件日志。
 
 #### 远程命令
 * 直接在企业微信应用发送`/push_qr`，插件就会推送登录二维码。也可以用来随时主动刷新cookie或者**测试通知是否可用**
@@ -41,4 +41,5 @@
 
 ### 问题反馈
 ***
-* 可以在[原仓库链接已关闭的PULL](https://github.com/jxxghp/MoviePilot-Plugins/pulls?q=is%3Apr+is%3Aclosed)中，`Ctrl`+`F`查找`RamenRa`，进入对应页面后在评论区反馈问题。最好带上插件设置和日志截图，企业微信通知相关的再加一张MoviePilot设置里微信通知设置的截图
+* 可以在[原仓库链接已关闭的PULL](https://github.com/jxxghp/MoviePilot-Plugins/pulls?q=is%3Apr+is%3Aclosed)中，`Ctrl`+`F`查找`RamenRa`，进入对应页面后在评论区反馈问题。最好带上插件设置和日志截图，企业微信通知相关的再加一张MoviePilot设置里微信通知设置的截图 <br>
+⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐
