@@ -31,8 +31,8 @@
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/CC.JPG)
 
 3. 使用企业微信应用接收示例，如果使用其他第三方推送则将图中`WeChat`替换成相应Token/API。<br>
-- 特别注意：MoviePilotV2中必须指定userid,如：`WeChat,WangFeng`<br>
-![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/wechat.JPG) <br>
+- **特别注意**：MoviePilotV2中**必须**指定userid,如：`WeChat,WangFeng`<br>
+![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20241115_005530.png) <br>
 \* 企业微信：直接填写WeChat，请先确认企微应用已可以**正常交互**，本插件只负责修改可信IP <br>
 \* Server酱：填写SCT开头的SendKey，如果使用Server<sup>3</sup>请手动将key开头的sct替换成大写的SCT <br>
 \* AnPush：需要在左侧`通道配置`找到通道ID，填写 `通道ID,API` <br>
