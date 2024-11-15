@@ -1,6 +1,6 @@
 ### 简介 
 ***
-* 定时检查公网IP覆盖填写到企业微信“可信IP”列表中。确保微信通知可用
+* 定时检查公网IP覆盖填写到企业微信“可信IP”列表中。确保微信通知可用（只在docker部署的MoviePilot测试过）
 * 在原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了第三方api，扫码登录时收到验证码，请以`?`结尾发送到企业微信应用。如:`110103？`
 
 * 第三方api主要缓解以下问题：
