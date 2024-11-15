@@ -34,7 +34,7 @@
 - **特别注意**：MoviePilotV2中**必须**指定userid且插件版本1.5.1以上,填写示例：`WeChat,WangFeng`<br>
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20241115_005530.png) <br>
 \* 企业微信：V1直接填写WeChat，请先确认企微应用已可以**正常交互**，本插件只负责修改可信IP <br>
-\* Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup> <br>
+\* Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
 \* AnPush：需要在左侧`通道配置`找到通道ID，填写 `通道ID,API` <br>
 \* PushPlus：填写一键复制的token <br>
 
