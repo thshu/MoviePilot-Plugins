@@ -38,6 +38,11 @@
 \* AnPush：需要在左侧`通道配置`找到通道ID，填写 `通道ID,API` <br>
 \* PushPlus：填写一键复制的token <br>
 
+#### 关于配置多个通知，且使用优先使用微信，第三方作为备用通知。
+* 此方案目前**只支持V**1,所以先放置在[Debug仓库v1.2.10](https://github.com/Rob0088/MoviePilot-Plugins).
+* 填写方式和以上一致，每个通知方式以||隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
+* 原因：由于V2发送插件消息的方法除None外，没有其他返回值。无法判断是否发送成功，所有V2发送消息直接默认成功。
+
 ### 问题反馈
 ***
 * 可以在[原仓库链接已关闭的PULL](https://github.com/jxxghp/MoviePilot-Plugins/pulls?q=is%3Apr+is%3Aclosed)中，`Ctrl`+`F`查找`RamenRa`，进入对应页面后在评论区反馈问题。最好带上插件设置和日志截图，企业微信通知相关的再加一张MoviePilot设置里微信通知设置的截图 <br>
