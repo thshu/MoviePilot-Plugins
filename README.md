@@ -15,7 +15,7 @@
 ### 可选的通知
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
 #### 关于微信作为主通知，第三方作为备用
-* 此方案目前**只支持V1**,先放置在[Debug仓库v1.2.12](https://github.com/Rob0088/MoviePilot-Plugins)
+* 此方案目前**只支持V1**,先放置在[Debug仓库v1.3.6](https://github.com/Rob0088/MoviePilot-Plugins)
 * 填写格式和以下说明一致，每个通知方式以`||`隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
 
 #### 远程命令
