@@ -1,6 +1,6 @@
 ## 简介 
 ***
-* 定时检查公网IP覆盖填写到企业微信“可信IP”列表中。确保微信通知可用（只在docker部署的MoviePilot测试过）
+* 定时检查公网IP覆盖填写到企业微信“可信IP”列表中。确保微信通知可用（只支持docker部署的MoviePilot）
 * 在原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了第三方api，扫码登录时收到验证码，请以`?`结尾发送到企业微信应用。如:`110103？`
 
 * 第三方api主要缓解以下问题：
@@ -24,7 +24,7 @@
 
 ## 使用说明
 ***
-需要获取一个参数和配置CookieCloud，**检测周期**建议设置4分钟以上。如： ` */10 * * * *`，10分钟检测一次IP。
+* 需要获取一个参数和配置CookieCloud。如果不启用CookieCloud，Cookie会没地方保存，导致下一次检查登录失败，进而提示**Cookie失效**。该插件就变成了一次性修改IP的插件。
 
 1. 获取应用ID，图中地址栏的末尾**红线部分就是应用ID**
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%BA%94%E7%94%A8ID.JPG)
