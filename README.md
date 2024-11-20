@@ -16,7 +16,7 @@
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
 #### 关于微信作为主通知，第三方作为备用
 * 此方案目前**只支持V1**,先放置在[Debug仓库v1.3.6](https://github.com/Rob0088/MoviePilot-Plugins)
-* 填写格式和以下说明一致，每个通知方式以`||`隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
+* 填写格式参考以下说明，每个通知方式以`||`隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
 
 #### 远程命令
 * 直接在企业微信应用发送`/push_qr`，MoviePoilt收到后插件开始推送登录二维码。也可以用来**测试通知是否可用**
@@ -25,7 +25,7 @@
 ## 使用说明
 ***
 * 需要获取一个参数和配置CookieCloud。
-* 如果不启用CookieCloud，Cookie会没地方保存，导致下一次检查登录失败，进而提示**Cookie失效**。该插件就变成了一次性修改IP的插件(预计v1.5.2后改善为:当不使用cc时，插件不重启就不失效)。
+* 如果不使用CookieCloud，Cookie会没地方保存，导致下一次检查登录失败，进而提示**Cookie失效**。该插件就变成了一次性修改IP的插件(预计v1.5.2后改善为：当不使用cc时，插件不重启就不失效)。
 
 1. 获取应用ID，图中地址栏的末尾**红线部分就是应用ID**
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%BA%94%E7%94%A8ID.JPG)
