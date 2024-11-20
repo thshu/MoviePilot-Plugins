@@ -31,9 +31,10 @@
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%BA%94%E7%94%A8ID.JPG)
 
 2. 启用CookieCloud，在MoviePilot的`设定`→`站点`中勾选 **“启用本地Cookiecloud服务器”**，即使用内建CookieCloud
+   * 如果你上传Cookie是使用浏览器的CookieCloud插件，修改IP插件会使用该cookie，此时请不要使用插件中的任何扫码行为。否则会挤掉你浏览器的Cookie，然后浏览器又会将**无效的Cookie**同步到CookieCloud服务器
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/CC.JPG)
 
-3. 使用企业微信应用接收示例，第三方推送则将图中 `WeChat,WangFeng` 替换成相应Token/API。<br>
+4. 使用企业微信应用接收示例，第三方推送则将图中 `WeChat,WangFeng` 替换成相应Token/API。<br>
 - **特别注意**：MoviePilotV2中**必须**指定userid且插件版本1.5.1及以上
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20241115_005530.png) <br>
 \* 企业微信：V1直接填写WeChat，请先确认企微应用已可以**正常交互**，本插件只负责修改可信IP <br>
