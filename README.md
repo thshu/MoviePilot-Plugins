@@ -24,7 +24,8 @@
 
 ## 使用说明
 ***
-* 需要获取一个参数和配置CookieCloud。如果不启用CookieCloud，Cookie会没地方保存，导致下一次检查登录失败，进而提示**Cookie失效**。该插件就变成了一次性修改IP的插件(预计v1.5.2后改善为:当不使用cc时，插件不重启就不失效)。
+* 需要获取一个参数和配置CookieCloud。
+* 如果不启用CookieCloud，Cookie会没地方保存，导致下一次检查登录失败，进而提示**Cookie失效**。该插件就变成了一次性修改IP的插件(预计v1.5.2后改善为:当不使用cc时，插件不重启就不失效)。
 
 1. 获取应用ID，图中地址栏的末尾**红线部分就是应用ID**
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%BA%94%E7%94%A8ID.JPG)
