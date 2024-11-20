@@ -25,12 +25,15 @@
 ## 使用说明
 ***
 * 需要获取一个参数和配置CookieCloud。如果收到验证码，请以`?`结尾发送到企业微信应用。如:`110103？`
-* 如果不使用CookieCloud，Cookie会没地方保存，导致下一次检查登录失败，进而提示**Cookie失效**。该插件就变成了一次性修改IP的插件(预计v1.5.2后改善为：当不使用cc时，插件不重启就不失效)。
+
 
 1. 获取应用ID，图中地址栏的末尾**红线部分就是应用ID**
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%BA%94%E7%94%A8ID.JPG)
 
 2. 启用CookieCloud，在MoviePilot的`设定`→`站点`中勾选 **“启用本地Cookiecloud服务器”**，即使用内建CookieCloud
+   * **关于不使用CookieCloud**，Cookie会没地方保存，导致下一次检查登录失败，进而提示**Cookie失效**。该插件就变成了一次性修改IP的插件(====预计v1.5.2后改善为：当不使用cc时，插件不重启就不失效====)。 
+   <br>
+   
    * **关于cookie失效太快的可能**：如果你上传Cookie是使用浏览器的CookieCloud插件，修改IP插件会使用该cookie，此时请不要使用插件中的任何扫码行为。否则会挤掉你浏览器的Cookie，然后浏览器又会将**无效的Cookie**同步到CookieCloud服务器
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/CC.JPG)
 
