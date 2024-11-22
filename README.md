@@ -44,7 +44,7 @@
 \* Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
 \* AnPush：需要在左侧`通道配置`找到通道ID，填写 `通道ID,API` <br>
 \* PushPlus：填写一键复制的token <br>
-### 关于"增加检测IP网站可选择" 预计v1.5.2后试装 [#560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
+### 关于"增加检测IP网站可选择" 预计v1.5.2后实装 [#560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
 
 
