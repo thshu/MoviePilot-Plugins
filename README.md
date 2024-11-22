@@ -34,7 +34,7 @@
    * **关于不使用CookieCloud**，Cookie会没地方保存，导致下一次检查登录失败，进而提示**Cookie失效**。该插件就变成了一次性修改IP的插件(====预计v1.5.2后改善为：当不使用cc时，插件不重启就不失效====)。 
    <br>
    
-   * **关于cookie失效太快的可能**：如果你上传Cookie是使用浏览器的CookieCloud插件，修改IP插件会使用该Cookie，此时请**不要使用插件中的任何扫码**行为。否则会挤掉你浏览器的Cookie，而浏览器又会将**无效的Cookie**上传到CookieCloud服务器。(====预计v1.5.2后改善====)
+   * **关于cookie失效太快的猜测**：如果你上传Cookie是使用浏览器的CookieCloud插件，修改IP插件会使用该Cookie。此时请**不要使用插件中的任何扫码**行为。否则会挤掉你浏览器的Cookie，而浏览器又会将**无效的Cookie**上传到CookieCloud服务器。(====预计v1.5.2后改善====)
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/CC.JPG)
 
 4. 使用企业微信应用接收示例，第三方推送则将图中 `WeChat,WangFeng` 替换成相应Token/API。<br>
