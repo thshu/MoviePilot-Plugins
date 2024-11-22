@@ -37,13 +37,14 @@
    * **关于cookie失效太快的猜测**：如果你上传Cookie是使用浏览器的CookieCloud插件，修改IP插件会使用该Cookie。此时请**不要使用插件中的任何扫码**行为。否则会挤掉你浏览器的Cookie，而浏览器又会将**无效的Cookie**上传到CookieCloud服务器。(====预计v1.5.2后改善====)
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/CC.JPG)
 
-4. 使用企业微信应用接收示例，第三方推送则将图中 `WeChat,WangFeng` 替换成相应Token/API。<br>
+4. 使用企业微信应用接收示例，使用第三方推送则在`通知方式`一栏填写相应Token/API。<br>
 - **特别注意**：MoviePilotV2中**必须**指定userid且插件版本1.5.1及以上
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20241115_005530.png) <br>
 \* 企业微信：V1直接填写WeChat，请先确认企微应用已可以**正常交互**，本插件只负责修改可信IP <br>
 \* Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
 \* AnPush：需要在左侧`通道配置`找到通道ID，填写 `通道ID,API` <br>
 \* PushPlus：填写一键复制的token <br>
+### 关于增加检测IP网站可选择 [#560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
 
 
@@ -51,3 +52,5 @@
 ***
 * 可以在[原仓库链接已关闭的PULL](https://github.com/jxxghp/MoviePilot-Plugins/pulls?q=is%3Apr+is%3Aclosed)中，`Ctrl`+`F`查找`RamenRa`，进入对应页面后在评论区反馈问题。最好带上插件设置和日志截图，企业微信通知相关的再加一张MoviePilot设置里微信通知设置的截图 <br>
 <p align="center"> ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ </p>
+
+
