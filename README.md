@@ -35,12 +35,17 @@
 
 4. 使用企业微信应用接收示例，使用第三方推送则在`通知方式`一栏填写相应Token/API。<br>
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20241115_005530.png) <br>
-\* 企业微信：填写WeChat，请先确认企微应用已可以**正常交互**，本插件只负责修改可信IP <br>
-\* Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
+* 企业微信：填写WeChat，请先确认企微应用已可以**正常交互**，本插件只负责修改可信IP <br>
+* Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
    可以填写 `server3的key,普通key` 实现将失效通知发给server3系统推送，二维码发给服务号 <br>
-\* AnPush：需要在左侧`通道配置`找到通道ID，填写 `通道ID,API` <br>
-\* PushPlus：填写一键复制的token <br>
+* AnPush：需要在左侧`通道配置`找到通道ID，填写 `通道ID,API` <br>
+* PushPlus：填写一键复制的token <br>
+
+<br>
+
 ### 关于"增加检测IP网站可选择" 预计v1.5.2实装 [#560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
+
+* 后续想取消自定义的url可能需要重启MP，
 
 
 
