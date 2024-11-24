@@ -6,13 +6,13 @@
 * 第三方api主要缓解以下问题：
 
 1. 需要经常外出使用企业微信的用户，cookie容易失效，要在异地电脑安装、配置CookieCloud重新上传cookie频繁
-2. 在仅有手机微信的情况下更新cookie相对麻烦（**原仓库更新后已支持二维码推送到手机**）
+2. 在仅有手机微信的情况下更新cookie相对麻烦（**原仓库v2.0已支持二维码推送到手机**）
 3. 因没有及时扫码，期间公网IP发生变化与可信IP不一致，导致企微应用无法发送通知
 
 ### 可选的通知
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
 
-#### 远程命令
+### 远程命令 /push_qr
 * 直接在企业微信应用发送`/push_qr`，MoviePoilt收到后插件开始推送登录二维码。也可以用来**测试通知是否可用**
 
 
@@ -31,7 +31,7 @@
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20241115_005530.png) <br>
 * 企业微信：填写WeChat，请先确认企微应用已可以**正常交互**，本插件只负责修改可信IP <br>
 * Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
-   可以填写 `server3的key,普通key` 实现将失效通知发给server3系统推送，二维码发给服务号 <br>
+   ，可以填写 `server3的key,普通key` 实现将失效通知发给server3系统推送，二维码发给服务号 <br>
 * AnPush：需要在左侧`通道配置`找到通道ID，填写 `通道ID,API` <br>
 * PushPlus：填写一键复制的token <br>
 
