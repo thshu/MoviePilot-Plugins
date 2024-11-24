@@ -9,14 +9,8 @@
 2. 在仅有手机微信的情况下更新cookie相对麻烦（**原仓库更新后已支持二维码推送到手机**）
 3. 因没有及时扫码，期间公网IP发生变化与可信IP不一致，导致企微应用无法发送通知
 
-
-
-
 ### 可选的通知
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
-#### 关于微信作为主通知，第三方作为备用
-* 此方案目前**只支持V1**
-* 填写格式参考以下说明，每个通知方式以`||`隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
 
 #### 远程命令
 * 直接在企业微信应用发送`/push_qr`，MoviePoilt收到后插件开始推送登录二维码。也可以用来**测试通知是否可用**
@@ -43,7 +37,11 @@
 
 <br>
 
-### 关于"增加检测IP网站可选择" 预计v1.5.2实装 [#560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
+### 关于微信作为主通知，第三方作为备用
+* **只支持MoviePilot V1**
+* 参考以上说明，每个通知方式以`||`隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
+
+### 关于"增加从指定url获取IP" 预计v1.5.2实装 [#560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
 * 后续想取消自定义的url可能需要重启MP，
 
