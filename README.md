@@ -29,7 +29,7 @@
 
 4. 使用企业微信应用接收示例，使用第三方推送则在`通知方式`一栏填写相应Token/API。<br>
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20241115_005530.png) <br>
-* 企业微信：填写`WeChat`，上图还指定了微信的userid。请确保企微应用已可以**正常交互** <br>
+* 企业微信：填写`WeChat`，上图还指定了微信的userid[可选项]。请确保企微应用已可以**正常交互** <br>
 * Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
 * AnPush：填写 `通道ID,API` ，需要在左侧`通道配置`找到通道ID <br>
 * PushPlus：填写一键复制的token <br>
