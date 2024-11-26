@@ -1,6 +1,6 @@
 ## 简介 
 ***
-* 定时检查公网IP覆盖填写到企业微信“可信IP”列表中。确保微信通知可用（只支持docker部署的MoviePilot）
+* 定时检查公网IP覆盖填写到企业微信“可信IP”列表中。确保微信通知可用
 * 在原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了第三方api，扫码登录时收到验证码，请以`?`结尾发送到企业微信应用。如:`110103？`
 
 * 第三方api主要缓解以下问题：
@@ -27,7 +27,7 @@
 2. 启用CookieCloud，在MoviePilot的`设定`→`站点`中勾选 **“启用本地Cookiecloud服务器”**，即使用内建CookieCloud   
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/CC.JPG)
 
-4. 使用企业微信应用接收示例，使用第三方推送则在`通知方式`一栏填写相应Token/API。<br>
+3. 使用企业微信应用通知示例，使用第三方推送则在`通知方式`填写相应Token/API。<br>
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20241115_005530.png) <br>
 * 企业微信：填写`WeChat`，上图还指定了微信的userid[非必填]。请确保企微应用已可以**正常交互** <br>
 * Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
