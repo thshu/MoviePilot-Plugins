@@ -4,10 +4,9 @@
 * 在原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了第三方api，扫码登录时收到验证码，请以`?`结尾发送到企业微信应用。如:`110103？`
 
 * 第三方api主要缓解以下问题：
-
 1. 需要经常外出使用企业微信的用户，cookie容易失效，要在异地电脑安装、配置CookieCloud重新上传cookie频繁
-2. 在仅有手机微信的情况下更新cookie相对麻烦（**原仓库v2.0已支持二维码推送到手机**）
-3. 因没有及时扫码，期间公网IP发生变化与可信IP不一致，导致企微应用无法发送通知
+2. 在仅有手机微信的情况下更新cookie相对麻烦（**原仓库v2.0后已支持二维码推送到手机**）
+3. 因没有及时扫码，期间公网IP发生变化与可信IP不一致，导致企微应用无法发送通知（v1可以配置第三方为备用发送二维码）
 
 ### 可选的通知
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
