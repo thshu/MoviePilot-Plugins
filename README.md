@@ -36,7 +36,7 @@
 <br>
 
 ### 关于微信作为主通知，第三方作为备用
-* 只支持MoviePilot V1
+* 只支持MoviePilot V1，在微信发送消息失败时，自动尝试使用第三方通知
 * 参考以上说明，每个通知方式以`||`隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
 
 ### 关于"增加从指定url获取IP" 预计v1.5.2实装 [#560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
@@ -48,7 +48,7 @@
 
 ## 问题反馈
 ***
-* 可以在[原仓库链接已关闭的PULL](https://github.com/jxxghp/MoviePilot-Plugins/pulls?q=is%3Apr+is%3Aclosed)中，`Ctrl`+`F`查找`RamenRa`，进入对应页面后在评论区反馈问题。最好带上插件设置和日志截图，企业微信通知相关的再加一张MoviePilot设置里微信通知设置的截图 <br>
+* 在Issuse里反馈github没有邮件通知，可能回复较慢或者没看。尽量在[原仓库链接已关闭的PULL](https://github.com/jxxghp/MoviePilot-Plugins/pulls?q=is%3Apr+is%3Aclosed)中反馈，`Ctrl`+`F`查找`RamenRa`，进入对应页面后在评论区附上插件设置和日志截图反馈问题。 <br>
 <p align="center"> ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ </p>
 
 
