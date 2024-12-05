@@ -21,12 +21,12 @@
 
 
 1. 获取应用ID，图中地址栏的末尾**红线部分就是应用ID**
-![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%BA%94%E7%94%A8ID.JPG)
+![image](https://www.helloimg.com/i/2024/11/15/67369975b7769.jpg)
 
-2. 启用CookieCloud，在MoviePilot的`设定`→`站点`中勾选 **“启用本地Cookiecloud服务器”**，即使用内建CookieCloud   
+3. 启用CookieCloud，在MoviePilot的`设定`→`站点`中勾选 **“启用本地Cookiecloud服务器”**，即使用内建CookieCloud   
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/CC.JPG)
 
-3. 使用企业微信应用通知示例，使用第三方推送则在`通知方式`填写相应Token/API。<br>
+4. 使用企业微信应用通知示例，使用第三方推送则在`通知方式`填写相应Token/API。<br>
 ![image](https://github.com/RamenRa/MoviePilot-Plugins/blob/main/docs/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20241115_005530.png) <br>
 * 企业微信：填写`WeChat`，上图还指定了微信的userid[非必填]。请确保企微应用已可以**正常交互** <br>
 * Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
