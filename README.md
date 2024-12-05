@@ -30,18 +30,18 @@
 ![image](https://www.helloimg.com/i/2024/11/15/6736997616de8.png) <br>
 * 企业微信：填写`WeChat`，上图还指定了微信的userid[非必填]。请确保企微应用已可以**正常交互** <br>
 * Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
-* AnPush：填写 `通道ID,API` ，需要在左侧`通道配置`找到通道ID <br>
+* AnPush：填写 `通道ID,API` ，在左侧`通道配置`找到通道ID <br>
 * PushPlus：填写一键复制的token <br>
 
 <br>
 
 ### 关于微信作为主通知，第三方作为备用
-* 只支持MoviePilot V1，在微信发送消息失败时，自动尝试使用第三方通知
+* 只支持MoviePilot V1，在微信发送消息失败时，自动尝试使用下一个通知
 * 参考以上说明，每个通知方式以`||`隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
 
 ### 关于"增加从指定url获取IP" 预计v1.5.2实装 [#560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
-* 后续想取消自定义的url可能需要重启MP
+* 后续想取消自定义的url可能需要重启MP,预计v1.5.3及以后不需要重启
 
 ### 关于Server<sup>3</sup>二维码推送到服务号
 * 可以填写 `Server3的key,普通key` 实现将失效通知发给Server<sup>3</sup>系统级推送，二维码发给服务号 <br>
