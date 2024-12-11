@@ -26,7 +26,7 @@
 ![image](https://www.helloimg.com/i/2024/11/15/67369975b7769.jpg)
 
 2. 启用CookieCloud，在MoviePilot的`设定`→`站点`中勾选 **“启用本地Cookiecloud服务器”**，即使用内建CookieCloud
-* 可以不启用，要取消勾选下图的`使用CookieCloud`开关，这样MP重启后Cookie就会失效。
+* 可以不启用，要取消勾选插件配置中的`使用CookieCloud`开关，这样MP重启后Cookie就会失效。
 ![image](https://www.helloimg.com/i/2024/11/15/67369975dd82f.jpg)
 
 3. 使用企业微信应用通知示例，使用第三方推送则在`通知方式`填写相应Token/API。<br>
