@@ -51,7 +51,7 @@
 
 ## 问题反馈
 ***
-* 在Issuse里反馈github没有邮件通知，可能回复较慢或者没看。尽量在[原仓库链接已关闭的PULL](https://github.com/jxxghp/MoviePilot-Plugins/pulls?q=is%3Apr+is%3Aclosed)中反馈，`Ctrl`+`F`查找`RamenRa`，进入对应页面后在评论区附上插件设置和日志截图反馈问题。 <br>
+* 在[Issuse](https://github.com/RamenRa/MoviePilot-Plugins/issues)里反馈,附上插件设置和日志截图。 <br>
 <p align="center"> ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ </p>
 
 
