@@ -30,7 +30,7 @@
 ![image](https://www.helloimg.com/i/2024/11/15/67369975dd82f.jpg)
 
 3. 使用企业微信应用通知示例，使用第三方推送则在`通知方式`填写相应Token/API。
-* 多个通知以`||`分隔，使用多个时V2中微信不能设为首选通知。[配置方式](https://github.com/RamenRa/MoviePilot-Plugins#%E5%85%B3%E4%BA%8E%E5%BE%AE%E4%BF%A1%E4%BD%9C%E4%B8%BA%E4%B8%BB%E9%80%9A%E7%9F%A5%E7%AC%AC%E4%B8%89%E6%96%B9%E4%BD%9C%E4%B8%BA%E5%A4%87%E7%94%A8)
+* 多个通知以`||`分隔，使用多个时,MPV2中微信不能设为首选通知。[配置方式](https://github.com/RamenRa/MoviePilot-Plugins#%E5%85%B3%E4%BA%8E%E5%BE%AE%E4%BF%A1%E4%BD%9C%E4%B8%BA%E4%B8%BB%E9%80%9A%E7%9F%A5%E7%AC%AC%E4%B8%89%E6%96%B9%E4%BD%9C%E4%B8%BA%E5%A4%87%E7%94%A8)
 * [从指定url获取IP](https://github.com/RamenRa/MoviePilot-Plugins#%E5%85%B3%E4%BA%8E%E5%A2%9E%E5%8A%A0%E4%BB%8E%E6%8C%87%E5%AE%9Aurl%E8%8E%B7%E5%8F%96ip-%E9%A2%84%E8%AE%A1v152%E5%AE%9E%E8%A3%85-560)<br>
 ![image](https://www.helloimg.com/i/2024/11/15/6736997616de8.png) <br>
 * 企业微信：填写`WeChat`，上图还指定了微信的userid[非必填]。请确保企微应用已可以**正常交互** <br>
