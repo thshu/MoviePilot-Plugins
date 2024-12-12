@@ -29,7 +29,9 @@
 * 可以不启用，要取消勾选插件配置中的`使用CookieCloud`开关，这样MP重启后Cookie就会失效。
 ![image](https://www.helloimg.com/i/2024/11/15/67369975dd82f.jpg)
 
-3. 使用企业微信应用通知示例，使用第三方推送则在`通知方式`填写相应Token/API。<br>
+3. 使用企业微信应用通知示例，使用第三方推送则在`通知方式`填写相应Token/API。
+* 多个通知以`||`分隔，使用多个时V2中微信不能设为首选通知。配置方式在下一段
+* [从指定url获取IP](https://github.com/RamenRa/MoviePilot-Plugins#%E5%85%B3%E4%BA%8E%E5%A2%9E%E5%8A%A0%E4%BB%8E%E6%8C%87%E5%AE%9Aurl%E8%8E%B7%E5%8F%96ip-%E9%A2%84%E8%AE%A1v152%E5%AE%9E%E8%A3%85-560)<br>
 ![image](https://www.helloimg.com/i/2024/11/15/6736997616de8.png) <br>
 * 企业微信：填写`WeChat`，上图还指定了微信的userid[非必填]。请确保企微应用已可以**正常交互** <br>
 * Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
