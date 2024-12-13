@@ -1,12 +1,9 @@
 ## 简介 
 ***
-* 定时检查公网IP覆盖填写到企业微信“可信IP”列表中。确保微信通知可用
-* 在原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了第三方api，扫码登录时收到验证码，请以`?`结尾发送到企业微信应用。如:`110103？`
+* 在原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了第三方api。功能：定时检查公网IP覆盖填写到企业微信“可信IP”列表中。确保微信通知可用<br>
 
-* 第三方api主要缓解以下问题：
-1. 需要经常外出使用企业微信的用户，cookie容易失效，要在异地电脑安装、配置CookieCloud重新上传cookie频繁
-2. 在仅有手机微信的情况下更新cookie相对麻烦（**原仓库v2.0后已支持二维码推送到手机**）
-3. 因没有及时扫码，期间公网IP发生变化与可信IP不一致，导致企微应用无法发送通知（v1可以用第三方为备用，企业微信发送失败时会自动尝试第三方）
+* 第三方api主要缓解：因没有及时扫码，公网IP变动，Cookie也失效，导致企微应用无法发送通知（v1可以微信作为主通知第三方为备用，企业微信发送失败时会自动尝试第三方）
+* 从指定URL获取IP：针对MoviePoilt部署在翻墙环境的用户
 
 ### 可选的通知
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
