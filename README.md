@@ -13,12 +13,13 @@
 
 ### 远程命令 /push_qr
 * 直接在企业微信应用发送`/push_qr`，MoviePoilt收到后插件开始推送登录二维码。也可以用来**测试通知是否可用**
-* MP可能会因网络波动没有收到推送命令，尤其是使用Cloudflare隧道的用户。多发送几次即可。收没收到以MP的日志为准。
+* MP可能会因网络波动没有收到推送命令，尤其是使用Cloudflare隧道的用户。多发送几次即可。收没收到以**MP的日志为准**。
 
 
 ## 使用说明
 ***
 * 需要获取一个参数和配置CookieCloud。如果收到验证码，请以`?`结尾发送到企业微信应用。如:`110103？`
+* 从指定URL获取IP。[配置方式](https://github.com/RamenRa/MoviePilot-Plugins#%E5%85%B3%E4%BA%8E%E5%A2%9E%E5%8A%A0%E4%BB%8E%E6%8C%87%E5%AE%9Aurl%E8%8E%B7%E5%8F%96ip-%E9%A2%84%E8%AE%A1v152%E5%AE%9E%E8%A3%85-560)
 
 1. 获取应用ID，图中地址栏的末尾**红线部分就是应用ID**
 ![image](https://www.helloimg.com/i/2024/11/15/67369975b7769.jpg)
@@ -28,9 +29,8 @@
 ![image](https://www.helloimg.com/i/2024/11/15/67369975dd82f.jpg)
 
 3. 使用企业微信应用通知示例。使用第三方推送则在`通知方式`填写相应Token/API。保存后，等待检测周期到后会自动开始检查ip，或使用一次`立即检测一次`
-* 多个通知以`||`分隔，使用多个时,MPV2中微信不能设为首选通知。[配置方式](https://github.com/RamenRa/MoviePilot-Plugins#%E5%85%B3%E4%BA%8E%E5%BE%AE%E4%BF%A1%E4%BD%9C%E4%B8%BA%E4%B8%BB%E9%80%9A%E7%9F%A5%E7%AC%AC%E4%B8%89%E6%96%B9%E4%BD%9C%E4%B8%BA%E5%A4%87%E7%94%A8)
-* 从指定url获取IP。[配置方式](https://github.com/RamenRa/MoviePilot-Plugins#%E5%85%B3%E4%BA%8E%E5%A2%9E%E5%8A%A0%E4%BB%8E%E6%8C%87%E5%AE%9Aurl%E8%8E%B7%E5%8F%96ip-%E9%A2%84%E8%AE%A1v152%E5%AE%9E%E8%A3%85-560)<br>
-![image](https://www.helloimg.com/i/2024/11/15/6736997616de8.png) <br>
+* 多个通知以`||`分隔，使用多个时,MPV2中微信不能设为首选通知。[配置方式](https://github.com/RamenRa/MoviePilot-Plugins#%E5%85%B3%E4%BA%8E%E5%BE%AE%E4%BF%A1%E4%BD%9C%E4%B8%BA%E4%B8%BB%E9%80%9A%E7%9F%A5%E7%AC%AC%E4%B8%89%E6%96%B9%E4%BD%9C%E4%B8%BA%E5%A4%87%E7%94%A8) <br>
+![image](https://www.helloimg.com/i/2024/11/15/6736997616de8.png) 
 * 企业微信：填写`WeChat`，上图还指定了微信的userid[非必填]。请确保企微应用已可以**正常交互** <br>
 * Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
 * AnPush：填写 `通道ID,API` ，在左侧`通道配置`找到通道ID <br>
