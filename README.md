@@ -19,7 +19,7 @@
 ## 使用说明
 ***
 * 需要获取一个参数和配置CookieCloud。如果收到验证码，请以`?`结尾发送到企业微信应用。如:`110103？`
-* 从指定URL获取IP。[配置方式](https://github.com/RamenRa/MoviePilot-Plugins#%E5%85%B3%E4%BA%8E%E5%A2%9E%E5%8A%A0%E4%BB%8E%E6%8C%87%E5%AE%9Aurl%E8%8E%B7%E5%8F%96ip-%E9%A2%84%E8%AE%A1v152%E5%AE%9E%E8%A3%85-560)
+* 从指定URL获取IP。[配置方式](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
 1. 获取应用ID，图中地址栏的末尾**红线部分就是应用ID**
 ![image](https://www.helloimg.com/i/2024/11/15/67369975b7769.jpg)
