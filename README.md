@@ -29,7 +29,7 @@
 ![image](https://www.helloimg.com/i/2024/11/15/67369975dd82f.jpg)
 
 3. 使用企业微信应用通知示例。使用第三方推送则在`通知方式`填写相应Token/API。保存后，等待检测周期到后会自动开始检查ip，或使用一次`立即检测一次`
-* 多个通知以`||`分隔，使用多个时,MPV2中微信不能设为首选通知。[配置方式](https://github.com/RamenRa/MoviePilot-Plugins#%E5%85%B3%E4%BA%8E%E5%BE%AE%E4%BF%A1%E4%BD%9C%E4%B8%BA%E4%B8%BB%E9%80%9A%E7%9F%A5%E7%AC%AC%E4%B8%89%E6%96%B9%E4%BD%9C%E4%B8%BA%E5%A4%87%E7%94%A8) <br>
+* 多个通知以`||`分隔，在MoviePilotV2使用多个通知时，微信设为首选其它通知将会无效。[配置方式](https://github.com/RamenRa/MoviePilot-Plugins#%E5%85%B3%E4%BA%8E%E5%BE%AE%E4%BF%A1%E4%BD%9C%E4%B8%BA%E4%B8%BB%E9%80%9A%E7%9F%A5%E7%AC%AC%E4%B8%89%E6%96%B9%E4%BD%9C%E4%B8%BA%E5%A4%87%E7%94%A8) <br>
 ![image](https://www.helloimg.com/i/2024/11/15/6736997616de8.png) 
 * 企业微信：填写`WeChat`，上图还指定了微信的userid[非必填]。请确保企微应用已可以**正常交互** <br>
 * Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
@@ -42,7 +42,7 @@
 * 只支持MoviePilot V1，在微信发送消息失败时，自动尝试使用下一个通知
 * 参考以上说明，每个通知方式以`||`隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
 
-### 关于"增加从指定url获取IP" 预计v1.5.2实装 [#560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
+### 关于"增加从指定url获取IP" 预计v1.5.2实装 [示例 #560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
 * 后续想取消自定义的url可能需要重启MP,预计v1.5.3及以后不需要重启
 
