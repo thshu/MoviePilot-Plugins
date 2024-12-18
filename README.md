@@ -4,6 +4,7 @@
 
 * 第三方api主要缓解：MPv1中，因没有及时扫码，公网IP变动，Cookie也失效，导致企微应用无法发送通知。（可配置第三方为备用，企业微信发送失败时会自动尝试第三方）
 * 从指定URL获取IP：面向MoviePoilt部署在翻墙环境的用户
+* 拟支持检测多网络出口，没有测试环境。放置在[debug仓库](https://github.com/Rob0088/MoviePilot-Plugins)吃灰中
 
 ### 可选的通知
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
@@ -33,15 +34,16 @@
 * AnPush：填写 `通道ID,API` ，在左侧`通道配置`找到通道ID <br>
 * PushPlus：填写一键复制的Token <br>
 
-
+<br>
 
 ### 关于微信作为主通知，第三方作为备用
 * 只支持MoviePilot V1，在微信发送消息失败时，自动尝试使用下一个通知
 * 参考以上说明，每个通知方式以`||`隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
 
-### 关于"增加从指定url获取IP" 预计v1.5.2实装 [示例 #560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
+### 关于多网络出口检测
+* 没有测试环境。放置在[debug仓库](https://github.com/Rob0088/MoviePilot-Plugins)吃灰中
 
-* 后续想取消自定义的url可能需要重启MP,预计v1.5.3及以后不需要重启
+### 关于"增加从指定url获取IP" 预计v1.5.2实装 [示例 #560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
 ### 关于Server<sup>3</sup>二维码推送到服务号
 * 可以填写 `Server3的key,普通key` 实现将失效通知发给Server<sup>3</sup>系统级推送，二维码发给服务号 <br>
