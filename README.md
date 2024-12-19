@@ -4,7 +4,7 @@
 
 * 第三方api主要缓解：MPv1中，因没有及时扫码，公网IP变动，Cookie也失效，导致企微应用无法发送通知。（可配置第三方为备用，企业微信发送失败时会自动尝试第三方）
 * 从指定URL获取IP：面向MoviePoilt部署在翻墙环境的用户
-* 拟支持检测多网络出口，没有测试环境。放置在[debug仓库](https://github.com/Rob0088/MoviePilot-Plugins)吃灰中。[进度](https://github.com/RamenRa/MoviePilot-Plugins/issues/2)
+* 拟支持检测多网络出口，没有测试环境。先放置在[debug仓库](https://github.com/Rob0088/MoviePilot-Plugins)中。[进度](https://github.com/RamenRa/MoviePilot-Plugins/issues/2)
 
 ### 可选的通知
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
@@ -41,7 +41,7 @@
 * 参考以上说明，每个通知方式以`||`隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
 
 ### 关于多网络出口检测
-* 没有测试环境。放置在[debug仓库](https://github.com/Rob0088/MoviePilot-Plugins)吃灰中。[进度](https://github.com/RamenRa/MoviePilot-Plugins/issues/2)
+* 没有测试环境。先放置在[debug仓库](https://github.com/Rob0088/MoviePilot-Plugins)中。[进度](https://github.com/RamenRa/MoviePilot-Plugins/issues/2)
 
 ### 关于"增加从指定url获取IP" 预计v1.5.2实装 [示例 #560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
