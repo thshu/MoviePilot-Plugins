@@ -41,7 +41,7 @@
 * 参考以上说明，每个通知方式以`||`隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
 
 ### 关于多网络出口检测
-* 没有测试环境。放置在[debug仓库](https://github.com/Rob0088/MoviePilot-Plugins)吃灰中
+* 没有测试环境。放置在[debug仓库](https://github.com/Rob0088/MoviePilot-Plugins)吃灰中。[进度](https://github.com/RamenRa/MoviePilot-Plugins/issues/2)
 
 ### 关于"增加从指定url获取IP" 预计v1.5.2实装 [示例 #560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
