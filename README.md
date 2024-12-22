@@ -43,9 +43,6 @@
 * 只支持MoviePilot V1，在微信发送消息失败时，自动尝试使用下一个通知
 * 参考以上说明，每个通知方式以`||`隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
 
-### 关于多网络出口检测
-* 不支持"立即检测一次"功能，首次检查IP可能会出错
-
 ### 关于"增加从指定url获取IP" 预计v1.5.2实装 
 * [示例 #560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
