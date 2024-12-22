@@ -3,9 +3,9 @@
 * 在原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了第三方api。功能：定时检查公网IP覆盖填写到企业微信“可信IP”列表中。确保微信通知可用<br>
 
 * 第三方api主要缓解：MPv1中，因没有及时扫码，公网IP变动，Cookie也失效，导致企微应用无法发送通知。（MPv1可配置第三方为备用，企业微信发送失败时会自动尝试第三方）
-* 使用第三方通知时，支持"IP变动后通知"，应对cookie失效快，但IP变动慢的环境。变相增加cookie有效时长。
+* 使用第三方通知时，支持"IP变动后通知"，应对cookie失效快，但IP变动慢的环境。变相增加cookie有效时长。[进程](https://github.com/RamenRa/MoviePilot-Plugins/issues/3)
 * 从指定URL获取IP：面向MoviePoilt部署在翻墙环境的用户
-* 拟支持检测多网络出口。[进度](https://github.com/RamenRa/MoviePilot-Plugins/issues/2)
+* 拟支持检测多网络出口。[进程](https://github.com/RamenRa/MoviePilot-Plugins/issues/2)
 
 ### 可选的通知
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
@@ -50,9 +50,9 @@
 * 可以填写 `Server3的key,普通key` 实现将失效通知发给Server<sup>3</sup>系统级推送，二维码发给服务号
 
 ### 关于多网络出口检查
-* 首次检查IP大概率会失败。[进度](https://github.com/RamenRa/MoviePilot-Plugins/issues/2)
+* 首次检查IP大概率会失败。[进程](https://github.com/RamenRa/MoviePilot-Plugins/issues/2)
 ### 关于cookie失效过快缓解
-* 如果你的IP变动很慢，可以尝试配置第三方通知后打开"IP变动后通知"。即真正无法使用企业微信通知时发送通知，二维码会发到第三方通知。<br>
+* 如果你的IP变动很慢，可以尝试配置第三方通知后打开"IP变动后通知"。即真正无法使用企业微信通知时发送通知，二维码会发到第三方通知。[进程](https://github.com/RamenRa/MoviePilot-Plugins/issues/3)<br>
 
 ## 问题反馈
 ***
