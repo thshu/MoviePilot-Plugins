@@ -1,4 +1,4 @@
-## 简介 
+## 简介 v1.7.0
 ***
 * 在原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了第三方api。功能：定时检查公网IP覆盖填写到企业微信“可信IP”列表中。确保微信通知可用<br>
 
