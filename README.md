@@ -18,7 +18,6 @@
 ## 使用说明 v1.7.0
 ***
 * 需要获取一个参数和配置CookieCloud。如果收到验证码，请以`?`结尾发送到企业微信应用。如:`110103？`
-* 从指定URL获取IP。[配置方式](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
 1. 获取应用ID，图中地址栏的末尾**红线部分就是应用ID**
 ![image](https://www.helloimg.com/i/2024/11/15/67369975b7769.jpg)
@@ -43,7 +42,7 @@
 * 只支持MoviePilot V1，在微信发送消息失败时，自动尝试使用下一个通知
 * 在通知方式一栏填写：`WeChat,WangFeng||SCTxxx`代表配置微信和Server酱。参考以上说明，每个通知方式以`||`隔开
 
-### 关于"增加从指定url获取IP" 预计v1.5.2实装 
+### 关于从指定URL获取IP 
 * 在应用ID一栏填写：`应用ID,应用ID2||https://myip.net,https://ip138.net` [图片示例 #560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
 ### 关于Server<sup>3</sup>二维码推送到服务号
