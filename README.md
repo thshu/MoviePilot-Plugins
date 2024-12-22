@@ -15,7 +15,7 @@
 * MP可能会因网络波动没有收到推送命令，尤其是使用Cloudflare隧道的用户。多发送几次即可。收没收到以**MP的日志为准**。
 
 
-## 使用说明
+## 使用说明 v1.7.0
 ***
 * 需要获取一个参数和配置CookieCloud。如果收到验证码，请以`?`结尾发送到企业微信应用。如:`110103？`
 * 从指定URL获取IP。[配置方式](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
