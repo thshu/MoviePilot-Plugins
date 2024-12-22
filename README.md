@@ -44,10 +44,16 @@
 ### 关于多网络出口检测
 * 不支持"立即检测一次"功能，首次检查IP可能会出错
 
-### 关于"增加从指定url获取IP" 预计v1.5.2实装 [示例 #560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
+### 关于"增加从指定url获取IP" 预计v1.5.2实装 
+* [示例 #560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
 ### 关于Server<sup>3</sup>二维码推送到服务号
-* 可以填写 `Server3的key,普通key` 实现将失效通知发给Server<sup>3</sup>系统级推送，二维码发给服务号 <br>
+* 可以填写 `Server3的key,普通key` 实现将失效通知发给Server<sup>3</sup>系统级推送，二维码发给服务号
+
+### 关于多网络出口检查
+* 首次检查IP大概率会失败。[进度](https://github.com/RamenRa/MoviePilot-Plugins/issues/2)
+### 关于cookie失效过快缓解
+* 如果你的IP变动很慢，可以尝试配置第三方通知后打开"IP变动后通知"。可以在IP变动时才发送通知，二维码会发到第三方通知。<br>
 
 ## 问题反馈
 ***
