@@ -41,18 +41,20 @@
 ***
 ### 关于微信作为主通知，第三方作为备用
 * 只支持MoviePilot V1，在微信发送消息失败时，自动尝试使用下一个通知
-* 参考以上说明，每个通知方式以`||`隔开。如配置微信和Server酱：`WeChat,WangFeng||SCTxxx`
+* 在通知方式一栏填写：`WeChat,WangFeng||SCTxxx`代表配置微信和Server酱。参考以上说明，每个通知方式以`||`隔开
 
 ### 关于"增加从指定url获取IP" 预计v1.5.2实装 
-* [示例 #560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
+* 在应用ID一栏填写：`应用ID,应用ID2||https://myip.net,https://ip138.net` [图片示例 #560](https://github.com/jxxghp/MoviePilot-Plugins/issues/560)
 
 ### 关于Server<sup>3</sup>二维码推送到服务号
-* 可以填写 `Server3的key,普通key` 实现将失效通知发给Server<sup>3</sup>系统级推送，二维码发给服务号
+* 填写 `Server3的key,普通key` 实现将失效通知发给Server<sup>3</sup>系统级推送，二维码发给服务号
 
 ### 关于多网络出口检查
-* 首次检查IP大概率会失败。[进程](https://github.com/RamenRa/MoviePilot-Plugins/issues/2)
+* 首次检查IP大概率会失败。[图片示例](https://github.com/RamenRa/MoviePilot-Plugins/issues/2)
+* 在应用ID一栏填写：`应用ID||wan2`
 ### 关于cookie失效过快缓解
-* 如果你的IP变动很慢，可以尝试配置第三方通知后打开"IP变动后通知"。即真正无法使用企业微信通知时发送通知，二维码会发到第三方通知。[进程](https://github.com/RamenRa/MoviePilot-Plugins/issues/3)<br>
+* 如果你的IP变动很慢，可以尝试配置第三方通知后打开"IP变动后通知"。即真正无法使用企业微信通知时发送通知，二维码会发到第三方通知。[图片示例](https://github.com/RamenRa/MoviePilot-Plugins/issues/3)
+* 在通知方式一栏至少填写一个可用的第三方token保存后，重新进入配置面板打开"IP变动后通知"开关 <br>
 
 ## 问题反馈
 ***
