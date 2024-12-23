@@ -3,7 +3,7 @@
 * 在原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了第三方api。功能：定时检查公网IP覆盖填写到企业微信“可信IP”列表中。确保微信通知可用<br>
 
 * 第三方api主要缓解：MPv1中，因没有及时扫码，公网IP变动，Cookie也失效，导致企微应用无法发送通知。（MPv1可配置第三方为备用，企业微信发送失败时会自动尝试第三方）
-* 使用第三方通知时，支持"IP变动后通知"，应对cookie失效快，但IP变动慢的环境。变相增加cookie有效时长。[进程](https://github.com/RamenRa/MoviePilot-Plugins/issues/3)
+* 使用第三方通知时，支持"IP变动后通知"，应对Cookie失效过快，但IP变动慢的环境。变相延长Cookie时长。[进程](https://github.com/RamenRa/MoviePilot-Plugins/issues/3)
 * 从指定URL获取IP：面向MoviePoilt部署在翻墙环境的用户
 * 拟支持检测多网络出口。[进程](https://github.com/RamenRa/MoviePilot-Plugins/issues/2)
 
@@ -40,20 +40,20 @@
 ***
 ### 关于微信作为主通知，第三方作为备用
 * 只支持MoviePilot V1，在微信发送消息失败时，自动尝试使用下一个通知
-* 在通知方式一栏填写：`WeChat,WangFeng||SCTxxx`代表配置微信和Server酱。参考以上说明，每个通知方式以`||`隔开
+* 在"通知方式"一栏填写：`WeChat,WangFeng||SCTxxx`代表配置微信和Server酱。参考以上说明，每个通知方式以`||`隔开
 
 ### 关于从指定URL获取IP 
-* 在应用ID一栏填写：`应用ID,应用ID2||https://myip.net,https://ip138.net` [图片示例](https://www.helloimg.com/i/2024/12/22/67681feb4e0af.jpg)
+* 在"应用ID"一栏填写：`应用ID,应用ID2||https://myip.net,https://ip138.net` [图片示例](https://www.helloimg.com/i/2024/12/22/67681feb4e0af.jpg)
 
 ### 关于Server<sup>3</sup>二维码推送到服务号
 * 填写 `Server3的key,普通key` 实现将失效通知发给Server<sup>3</sup>系统级推送，二维码发给服务号
 
 ### 关于多网络出口检查
 * 首次检查IP大概率会失败。
-* 在应用ID一栏填写：`应用ID||wan2`。[图片示例](https://www.helloimg.com/i/2024/12/22/67681feb3e0a4.jpg)
-### 关于cookie失效过快缓解
+* 在"应用ID"一栏填写：`应用ID||wan2`。[图片示例](https://www.helloimg.com/i/2024/12/22/67681feb3e0a4.jpg)
+### 关于Cookie失效过快缓解方案
 * 如果你的IP变动很慢，可以尝试配置第三方通知后打开"IP变动后通知"。即真正无法使用企业微信通知时发送通知，二维码会发到第三方通知。
-* 在通知方式一栏至少填写一个可用的第三方token保存后，重新进入配置面板打开"IP变动后通知"开关。[图片示例](https://www.helloimg.com/i/2024/12/22/67681feb8299a.png)<br>
+* 在"通知方式"一栏至少填写一个可用的第三方token保存后，重新进入配置面板打开"IP变动后通知"开关。[图片示例](https://www.helloimg.com/i/2024/12/22/67681feb8299a.png)<br>
 
 ## 问题反馈
 ***
