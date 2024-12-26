@@ -57,7 +57,7 @@
 
 ## 问题反馈
 ***
-* 在[Issuse](https://github.com/RamenRa/MoviePilot-Plugins/issues)里反馈,附上插件设置和日志截图,日志中相同的错误重复输出的，重点关注第一次出现错误和最后一次的地方。 <br>
+* 在[Issuse](https://github.com/RamenRa/MoviePilot-Plugins/issues)里反馈。附上插件设置和日志截图,日志中相同的错误重复输出的，重点关注第一次出现错误和最后一次的地方。 <br>
 <p align="center"> ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ </p>
 
 
