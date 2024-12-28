@@ -5,7 +5,7 @@
 * 第三方api主要缓解：因没有及时扫码，公网IP变动，Cookie也失效，导致企微应用无法发送通知。（MPv1可配置第三方为备用，企业微信发送失败时会自动尝试第三方）
 * 使用第三方通知时，支持"IP变动后通知"，应对Cookie失效过快，但IP变动慢的环境。变相延长Cookie时长。[进度](https://github.com/RamenRa/MoviePilot-Plugins/issues/3)
 * 从指定URL获取IP：面向MoviePoilt部署在翻墙环境的用户
-* 支持检测多网络出口(从URL获取)：面向iKuai随机分流等多网络出口用户。
+* 支持检测多网络出口(从URL获取)：面向iKuai随机分流或MP网络出口会跳的多网络出口用户。
 
 ### 可选的通知
 * 企业微信应用、[Server酱](https://sct.ftqq.com/sendkey)、[AnPush](https://anpush.com/push/tool)、[PushPlus推送](https://www.pushplus.plus/push1.html)。配置任意一个后才可以正常使用`/push_qr`<br>
@@ -48,7 +48,7 @@
 ### 关于Server<sup>3</sup>二维码推送到服务号
 * 填写 `Server3的key,普通key` 实现将失效通知发给Server<sup>3</sup>系统级推送，二维码发给服务号
 
-### 关于多网络出口检查
+### 关于多网络出口检查(MP的出口IP会跳动才使用，否则不建议使用)
 * 已知问题：第一次检查IP大概率会失败，首次安装可能要到**第三轮**检测后才正常(使用"立即检测一次"的不算)。
 * 原理是从URL获取：[orz.tools](https://ip.orz.tools/) [m27.tech](https://ip.m27.tech/) [skk.moe](https://ip.skk.moe/multi)。从这些URL能获取到多线路的IP，插件才能获取到。
 * 在"应用ID"一栏填写：`应用ID||wan2`。[图片示例](https://www.helloimg.com/i/2024/12/22/67681feb3e0a4.jpg)
