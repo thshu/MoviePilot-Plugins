@@ -54,7 +54,7 @@
 ```
 docker exec <MP的容器名称> sed -i 's/def write_wan2_ip(self):/def write_wan2_ip(self, event: Event = None):/' /app/app/plugins/dynamicwechat/__init__.py
 ```
-* 原理是从URL获取：[orz.tools](https://ip.orz.tools/) [m27.tech](https://ip.m27.tech/) [skk.moe](https://ip.skk.moe/multi)。从这些URL能获取到多线路的IP，插件才能获取到。
+* 原理是从URL获取IP：[orz.tools](https://ip.orz.tools/) [m27.tech](https://ip.m27.tech/) [skk.moe](https://ip.skk.moe/multi)。从这些URL能获取到多线路的IP，插件才能获取到。
 * 在"应用ID"一栏填写：`应用ID||wan2`。[图片示例](https://www.helloimg.com/i/2024/12/22/67681feb3e0a4.jpg)
 ### 关于Cookie失效过快缓解方案
 * 如果你的IP变动很慢，可以尝试配置第三方通知后打开"IP变动后通知"。即真正无法使用企业微信通知时发送通知，二维码会发到第三方通知。
