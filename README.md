@@ -50,7 +50,7 @@
 
 ### 关于多网络出口检查(MP的出口IP会跳动才使用，否则不建议使用)
 * 已知问题：第一次检查IP大概率会失败，首次安装可能要到**第三轮**检测后才正常(使用"立即检测一次"的不算)。
-* 1.7.1"立即检测一次"功能实际未生效。修复命令示例：`docker exec <MP的容器名称> sed -i 's/def write_wan2_ip(self):/def write_wan2_ip(self, event: Event = None):/' /app/app/plugins/dynamicwechat/__init__.py`，运行后重启MP。
+* v1.7.1的"立即检测一次"功能实际未生效。修复命令示例：`docker exec <MP的容器名称> sed -i 's/def write_wan2_ip(self):/def write_wan2_ip(self, event: Event = None):/' /app/app/plugins/dynamicwechat/__init__.py`，运行后重启MP。
 * 原理是从URL获取：[orz.tools](https://ip.orz.tools/) [m27.tech](https://ip.m27.tech/) [skk.moe](https://ip.skk.moe/multi)。从这些URL能获取到多线路的IP，插件才能获取到。
 * 在"应用ID"一栏填写：`应用ID||wan2`。[图片示例](https://www.helloimg.com/i/2024/12/22/67681feb3e0a4.jpg)
 ### 关于Cookie失效过快缓解方案
