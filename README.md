@@ -3,7 +3,7 @@
 * 在原[suraxiuxiu库](https://github.com/suraxiuxiu/MoviePilot-Plugins/)的基础上添加了第三方api。功能：定时检查公网IP覆盖填写到企业微信“可信IP”列表中。确保微信通知可用<br>
 
 * 第三方api主要缓解：因没有及时扫码，公网IP变动，Cookie也失效，导致企微应用无法发送通知。（MPv1可配置第三方为备用，企业微信发送失败时会自动尝试第三方）
-* 使用第三方通知时，支持"IP变动后通知"，应对Cookie失效过快，但IP变动慢的环境。变相延长Cookie时长。[进度](https://github.com/RamenRa/MoviePilot-Plugins/issues/3)
+* 使用第三方通知时，支持"IP变动后通知"，应对Cookie失效过快，但IP变动慢的环境。变相延长Cookie时长。
 * 从指定URL获取IP：面向MoviePoilt部署在翻墙环境的用户
 * 支持检测多网络出口(从URL获取)：面向iKuai随机分流或MP网络出口会跳的多网络出口用户。
 
