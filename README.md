@@ -62,7 +62,7 @@ docker exec <MP的容器名称> sed -i 's/def write_wan2_ip(self):/def write_wan
 
 ## 问题反馈
 ***
-* 在[Issuse](https://github.com/RamenRa/MoviePilot-Plugins/issues)里反馈。附上插件设置和日志截图,日志中相同的错误重复输出的，重点关注第一次出现错误和最后一次的地方。 <br>
+* 先查看[已关闭的Issuse](https://github.com/RamenRa/MoviePilot-Plugins/issues?q=is%3Aissue%20state%3Aclosed)和[Issuse](https://github.com/RamenRa/MoviePilot-Plugins/issues)是否有相同问题，确认没有后，在[Issuse](https://github.com/RamenRa/MoviePilot-Plugins/issues)右上角新建问题。附上插件设置和日志截图,日志中相同的错误重复输出的，重点关注第一次出现错误和最后一次的地方。 <br>
 <p align="center"> ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ </p>
 
 
