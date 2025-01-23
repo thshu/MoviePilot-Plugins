@@ -28,13 +28,14 @@
 
 3. 使用企业微信应用通知示例。使用第三方推送则在"通知方式"中填写相应Token/API。
 * 多个通知以`||`分隔，在MoviePilotV2使用多个通知时，微信作为首选其余通知方式会失效(但可以启用"IP变动后通知"功能，通知逻辑就变成：Cookie失效且公网IP变动时发送通知)。[配置方式](https://github.com/RamenRa/MoviePilot-Plugins#%E5%85%B3%E4%BA%8E%E5%BE%AE%E4%BF%A1%E4%BD%9C%E4%B8%BA%E4%B8%BB%E9%80%9A%E7%9F%A5%E7%AC%AC%E4%B8%89%E6%96%B9%E4%BD%9C%E4%B8%BA%E5%A4%87%E7%94%A8) <br>
-![image](https://www.helloimg.com/i/2024/11/15/6736997616de8.png) 
+![image](https://www.helloimg.com/i/2024/11/15/6736997616de8.png) <br>
 * 企业微信：填写`WeChat`，上图还指定了微信的userid[非必填]。请确保企微应用已可以**正常交互** <br>
 * Server酱：填写SCT开头的SendKey，支持Server<sup>3</sup>(虽说支持系统级推送，但扫码体验并不好) <br>
 * AnPush：填写 `通道ID,API` ，在左侧`通道配置`找到通道ID <br>
 * PushPlus：填写一键复制的Token <br>
 
-<br>
+4. 使用"本地扫码修改IP"或`/push_qr`，根据日志提示完成一次登录流程后，插件会保存cookie <br>
+
 
 ## 一些问题和其他功能合集
 ***
