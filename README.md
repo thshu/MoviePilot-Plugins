@@ -50,9 +50,9 @@
 * 填写 `Server3的key,普通key` 实现将失效通知发给Server<sup>3</sup>系统级推送，二维码发给服务号
 
 ### 关于多网络出口检查(MP的出口IP会跳动才使用，否则不建议使用)
-* 已知问题：第一次检查IP大概率会失败，首次安装可能要到**第三轮**检测后才正常(可使用"立即检测一次")
+* 已知问题：第一次检查IP大概率会失败，首次安装可能要到**第三轮**检测后才正常(可使用"立即检测一次")。无法使用"从指定URL获取IP "功能
 * v1.7.1的"立即检测一次"功能实际未生效。请更新到v1.7.2及以上
-* 原理是从URL获取IP：[orz.tools](https://ip.orz.tools/) [m27.tech](https://ip.m27.tech/) [skk.moe](https://ip.skk.moe/multi)。从这些URL能获取到多线路的IP，插件才能获取到
+* 原理是从[orz.tools](https://ip.orz.tools/) [m27.tech](https://ip.m27.tech/) [skk.moe](https://ip.skk.moe/multi)获取IP。从这些URL能获取到多线路的IP，插件才能获取到
 * 在"应用ID"一栏填写：`应用ID||wan2`，其中`2`表示最大保留2个IP，一般设为>=宽带线路即可。[图片示例](https://www.helloimg.com/i/2024/12/22/67681feb3e0a4.jpg)
 ### 关于Cookie失效过快缓解方案
 * 如果你的IP变动很慢，可以尝试配置第三方通知后打开"IP变动后通知"。即真正无法使用企业微信通知时发送通知，二维码会发到第三方通知
