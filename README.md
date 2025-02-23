@@ -41,7 +41,7 @@
 ***
 ### 关于微信作为主通知，第三方作为备用
 * 只支持MoviePilot V1，在微信发送消息失败时，自动尝试使用下一个通知
-* 在"通知方式"一栏填写：`WeChat,WangFeng||SCTxxx`代表配置微信和Server酱。参考以上说明，每个通知方式以`||`隔开
+* 在"通知方式"一栏填写：`WeChat,WangFeng||SCTxxx`代表配置微信和Server酱。每个通知方式以`||`隔开
 
 ### 关于从指定URL获取IP 
 * 在"应用ID"一栏填写：`应用ID,应用ID2||https://myip.net,https://ip138.net` [图片示例](https://www.helloimg.com/i/2024/12/22/67681feb4e0af.jpg)
