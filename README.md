@@ -58,9 +58,6 @@
 * 如果你的IP变动很慢，可以尝试配置第三方通知后打开"IP变动后通知"。即真正无法使用企业微信通知时发送通知，二维码会发到第三方通知
 * 在"通知方式"一栏至少填写一个可用的第三方token保存后，重新进入配置面板打开"IP变动后通知"开关。[图片示例](https://www.helloimg.com/i/2024/12/22/67681feb8299a.png)<br>
 
-## 问题反馈
-***
-* 先查看[已关闭的Issuse](https://github.com/RamenRa/MoviePilot-Plugins/issues?q=is%3Aissue%20state%3Aclosed)和[Issuse](https://github.com/RamenRa/MoviePilot-Plugins/issues)是否有相同问题，确认没有后，在[Issuse](https://github.com/RamenRa/MoviePilot-Plugins/issues)右上角新建问题。附上插件设置和日志截图,日志中相同的错误重复输出的，重点关注第一次出现错误和最后一次的地方。 <br>
-<p align="center"> ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ :point_right: ⭐ :point_left: ⭐ </p>
+
 
 
