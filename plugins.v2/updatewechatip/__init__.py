@@ -84,7 +84,6 @@ class UpdateWeChatIp(_PluginBase):
         self._se = requests.Session()
         self._se.cookies.set('wwrtx.sid', self._wwrtx_sid)
         self._ip = self.get_ip_from_url()
-        self._party_cache()
         self.check()
 
     def _save_current_config(self):
@@ -97,13 +96,6 @@ class UpdateWeChatIp(_PluginBase):
     def get_service(self) -> List[Dict[str, Any]]:
         if self._enabled and self._cron:
             return [
-                {
-                    "id": self.__class__.__name__,
-                    "name": f"{self.plugin_name}Cookie刷新服务",
-                    "trigger": CronTrigger.from_crontab('*/10 * * * *'),
-                    "func": self._party_cache,
-                    "kwargs": {}
-                },
                 {
                     "id": self.__class__.__name__,
                     "name": f"{self.plugin_name}服务",
@@ -278,8 +270,20 @@ class UpdateWeChatIp(_PluginBase):
                 "auth": "apikey",
                 "summary": "获取图片",
                 "description": "获取图片",
-            }
+            },
+            {
+                "path": "/UpdateIP",
+                "endpoint": self.UpdateIp,
+                "methods": ["GET"],
+                # 前端插件页面通过 api 模块调用时，通常使用 bear
+                "auth": "apikey",
+                "summary": "获取图片",
+                "description": "获取图片",
+            },
         ]
+    def UpdateIp(self, ip):
+        self._ip = ip
+        self._save_ip_config()
 
     def get_img(self, uuid):
         save_path: Path = self.get_data_path() / f"WeChatQr.jpg"
@@ -630,5 +634,9 @@ class UpdateWeChatIp(_PluginBase):
         app_config = self._get_corp_app_v2()
         app_config_ips = app_config.get('app', {}).get('white_ip_list', {}).get('ip', [])
         if self._ip not in app_config_ips:
-            self._save_ip_config()
+            if self._save_ip_config():
+                self.post_message(
+                    title='企业微信IP更新成功',
+                    text="IP已更新为:" + self._ip
+                )
 

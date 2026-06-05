@@ -3,12 +3,14 @@
     "name": "动态企微可信IP",
     "description": "修改企微应用可信IP，可本地扫码刷新Cookie",
     "labels": "消息通知",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "icon": "Wecom_A.png",
     "author": "书小白",
     "level": 2,
     "v2": true,
     "history": {
+      "1.0.1": "IP更新时发送通知,增加API接口,指定更新的IP",
+      "1.0.0": "初始化"
     }
   }
 }
