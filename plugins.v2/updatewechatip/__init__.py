@@ -1,15 +1,12 @@
-import json
 import re
 import time
 import uuid
-from http.cookiejar import Cookie
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 from urllib.parse import urlparse, parse_qs
 from apscheduler.triggers.cron import CronTrigger
 import requests
 from fastapi.responses import FileResponse
-from h11 import _headers
 
 from app.core.config import settings
 from app.core.event import eventmanager, Event
@@ -26,7 +23,7 @@ class UpdateWeChatIp(_PluginBase):
     # 插件图标
     plugin_icon = "Wecom_A.png"
     # 插件版本，必须和 package.v2.json 中保持一致
-    plugin_version = "1.0.1"
+    plugin_version = "1.0.2"
     # 作者信息
     plugin_author = "书小白"
     author_url = "https://github.com/thshu/MoviePilot-Plugins"
@@ -45,7 +42,7 @@ class UpdateWeChatIp(_PluginBase):
     _captcha = {}
     _wwrtx_sid = None
     _party_cache_data = None
-    _app_id = None
+    _app_id = ""
     _ip = None
     _is_login = False
     onlyonce = False
@@ -98,7 +95,7 @@ class UpdateWeChatIp(_PluginBase):
             return [
                 {
                     "id": self.__class__.__name__,
-                    "name": f"{self.plugin_name}服务",
+                    "name": f"{self.__class__.__name__}_{self.plugin_name}服务",
                     "trigger": CronTrigger.from_crontab(self._cron),
                     "func": self.check,
                     "kwargs": {}
@@ -368,7 +365,7 @@ class UpdateWeChatIp(_PluginBase):
                                             'model': '_app_id',
                                             'label': '[必填]应用ID',
                                             'rows': 1,
-                                            'placeholder': '输入应用ID,在企业微信应用页面URL末尾获取'
+                                            'placeholder': '输入应用ID,多个使用(,)英文逗号隔开,在企业微信应用页面URL末尾获取'
                                         }
                                     }
                                 ]
@@ -563,14 +560,16 @@ class UpdateWeChatIp(_PluginBase):
     def _save_ip_config(self):
         logger.info(f"更新IP为:{self._ip}")
         url = 'https://work.weixin.qq.com/wework_admin/apps/saveIpConfig?lang=zh_CN&f=json&ajax=1'
-        data = {
-            'app_id': self._app_id,
-            'ipList[]': self._ip
-        }
-        res = self._se.post(url, data=data, headers=self._headers)
-        if 'err' not in res.text:
-            return True
-        return False
+        for appId in self._app_id.split(','):
+            data = {
+                'app_id': appId,
+                'ipList[]': self._ip
+            }
+            res = self._se.post(url, data=data, headers=self._headers)
+            if 'err' in res.text:
+                logger.error(f"{appId}更新IP白名单失败，返回值：{res.text}")
+            else:
+                logger.info(f'{appId}更新白名单成功，更新IP为：{self._ip}，接口返回值：{res.text}')
 
     def _login_success(self):
         logger.info("保存配置文件")
