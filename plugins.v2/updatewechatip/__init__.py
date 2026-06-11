@@ -280,8 +280,8 @@ class UpdateWeChatIp(_PluginBase):
                 "methods": ["GET"],
                 # 前端插件页面通过 api 模块调用时，通常使用 bear
                 "auth": "apikey",
-                "summary": "获取图片",
-                "description": "获取图片",
+                "summary": "更新企业微信IP白名单",
+                "description": "更新企业微信IP白名单,需要传递查询参数,参数名为:ip",
             },
         ]
 
@@ -354,7 +354,7 @@ class UpdateWeChatIp(_PluginBase):
                                         'props': {
                                             'model': '_cron',
                                             'label': '[必填]检测周期',
-                                            'placeholder': '0 * * * *'
+                                            'placeholder': '*/10 * * * *'
                                         }
                                     }
                                 ]
@@ -386,6 +386,7 @@ class UpdateWeChatIp(_PluginBase):
             "_wwrtx_sid": "",
             "_app_id": "",
             "_party_cache_data": {},
+            "_corn": '*/10 * * * *'
         }
 
     def get_page(self) -> List[dict]:
