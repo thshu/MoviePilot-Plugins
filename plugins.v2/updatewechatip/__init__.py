@@ -1,6 +1,8 @@
 import re
 import time
 import uuid
+from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 from urllib.parse import urlparse, parse_qs
@@ -13,6 +15,7 @@ from app.core.event import eventmanager, Event
 from app.log import logger
 from app.plugins import _PluginBase
 from app.schemas.types import EventType
+from app.utils.string import StringUtils
 
 
 class UpdateWeChatIp(_PluginBase):
@@ -23,7 +26,7 @@ class UpdateWeChatIp(_PluginBase):
     # 插件图标
     plugin_icon = "Wecom_A.png"
     # 插件版本，必须和 package.v2.json 中保持一致
-    plugin_version = "1.0.3"
+    plugin_version = "1.0.4"
     # 作者信息
     plugin_author = "书小白"
     author_url = "https://github.com/thshu/MoviePilot-Plugins"
@@ -48,7 +51,10 @@ class UpdateWeChatIp(_PluginBase):
     onlyonce = False
     _cron = ""
 
-    _ip_urls = ["https://myip.ipip.net", "https://ddns.oray.com/checkip", "https://ip.3322.net", "https://4.ipw.cn", 'http://v4.666666.host:66/ip', 'https://ipv4.ddnspod.com', 'https://v4.66666.host:66/ip',
+    _UpdateLogKey = 'UpdateLog'
+
+    _ip_urls = ["https://myip.ipip.net", "https://ddns.oray.com/checkip", "https://ip.3322.net", "https://4.ipw.cn",
+                'http://v4.666666.host:66/ip', 'https://ipv4.ddnspod.com', 'https://v4.66666.host:66/ip',
                 'https://4.ipw.cn', 'https://ip.3322.net', 'https://6.66666.host:66/ip']
     _ip_pattern = r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b'
 
@@ -278,6 +284,7 @@ class UpdateWeChatIp(_PluginBase):
                 "description": "获取图片",
             },
         ]
+
     def UpdateIp(self, ip):
         self._ip = ip
         self._save_ip_config()
@@ -383,47 +390,122 @@ class UpdateWeChatIp(_PluginBase):
 
     def get_page(self) -> List[dict]:
         """返回详情页 JSON。"""
-        return [
+        # ---------- 获取并排序更新日志 ----------
+        raw_data = self.get_data(self._UpdateLogKey) or []
+        update_log: List[UpdateLogDto] = [UpdateLogDto.from_dict(i) for i in raw_data]
+        data_list = sorted(update_log, key=lambda x: x.UpdateTime, reverse=True)
+
+        update_log_trs = [
             {
-                "component": "div",
-                "props": {
-                    "style": {
-                        "textAlign": "center"
-                    }
-                },
+                "component": "tr",
+                "props": {"class": "text-sm"},
                 "content": [
                     {
-                        "component": "div",
+                        "component": "td",
                         "props": {
-                            "style": {
-                                "display": "flex",
-                                "justifyContent": "center",
-                                "alignItems": "center",
-                                "flexDirection": "column",  # 垂直排列
-                                "gap": "10px"  # 控制间距
-                            }
+                            "style": {"color": "red"} if not data.status else {}
                         },
+                        "text": "成功" if data.status else "失败",
+                    },
+                    {"component": "td", "text": data.app_id},
+                    {"component": "td", "text": data.ip},
+                    {"component": "td", "text": data.result},
+                    {"component": "td", "text": data.UpdateTime},
+                ],
+            }
+            for data in data_list
+        ]
+
+        # ---------- 安全获取 party 名称 ----------
+        party_list = self._party_cache_data.get("party_list", {}).get("list") or [{}]
+        party_name = party_list[0].get("name", "未知")
+
+        # ---------- 构建页面结构 ----------
+        return [
+            {
+                "component": "VRow",
+                "content": [
+                    {
+                        "component": "VCol",
+                        "props": {"cols": 12},
                         "content": [
+                            # 顶部状态标题
                             {
                                 "component": "div",
-                                "text":f"{self._party_cache_data.get('party_list', {}).get('list', [{}])[0].get('name')}已登录" if self._is_login else '登录失效',
                                 "props": {
                                     "style": {
-                                        "fontSize": "22px",
-                                        "fontWeight": "bold",
-                                        "color": "#ffffff",
-                                        "backgroundColor": "#9B50FF",
-                                        "padding": "8px",
-                                        "borderRadius": "5px",
-                                        "textAlign": "center",
-                                        "marginBottom": "10px",
-                                        "display": "inline-block"
+                                        "display": "flex",
+                                        "justifyContent": "center",
+                                        "alignItems": "center",
+                                        "flexDirection": "column",
+                                        "gap": "10px",
+                                        "marginBottom": "20px",  # 增加与表格的间距
                                     }
-                                }
+                                },
+                                "content": [
+                                    {
+                                        "component": "div",
+                                        "text": f"{party_name}已登录" if self._is_login else "登录失效",
+                                        "props": {
+                                            "style": {
+                                                "fontSize": "22px",
+                                                "fontWeight": "bold",
+                                                "color": "#ffffff",
+                                                "backgroundColor": "#9B50FF",
+                                                "padding": "8px 16px",
+                                                "borderRadius": "5px",
+                                                "textAlign": "center",
+                                                "display": "inline-block",
+                                            }
+                                        },
+                                    }
+                                ],
                             },
-                        ]
-                    },
-                ]
+                            # 日志表格
+                            {
+                                "component": "VTable",
+                                "props": {"hover": True},
+                                "content": [
+                                    {
+                                        "component": "thead",
+                                        "props": {"class": "text-no-wrap"},
+                                        "content": [
+                                            {
+                                                "component": "th",
+                                                "props": {"class": "text-start ps-4"},
+                                                "text": "状态",
+                                            },
+                                            {
+                                                "component": "th",
+                                                "props": {"class": "text-start ps-4"},
+                                                "text": "appId",
+                                            },
+                                            {
+                                                "component": "th",
+                                                "props": {"class": "text-start ps-4"},
+                                                "text": "更新IP",
+                                            },
+                                            {
+                                                "component": "th",
+                                                "props": {"class": "text-start ps-4"},
+                                                "text": "返回值",
+                                            },
+                                            {
+                                                "component": "th",
+                                                "props": {"class": "text-start ps-4"},
+                                                "text": "更新时间",
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        "component": "tbody",
+                                        "content": update_log_trs,
+                                    },
+                                ],
+                            },
+                        ],
+                    }
+                ],
             }
         ]
 
@@ -509,7 +591,7 @@ class UpdateWeChatIp(_PluginBase):
         }
         self._se.cookies.set('wwrtx.sid', self._wwrtx_sid)
         res = self._se.post(url, params=params, headers=self._headers)
-        self._party_cache_data = res.text
+        self._party_cache_data = res.json()
         logger.info(res.text)
         if 'errCode' not in res.text:
             self._party_cache_data = res.json().get('data')
@@ -560,6 +642,7 @@ class UpdateWeChatIp(_PluginBase):
 
     def _save_ip_config(self):
         logger.info(f"更新IP为:{self._ip}")
+        _update_log = []
         url = 'https://work.weixin.qq.com/wework_admin/apps/saveIpConfig?lang=zh_CN&f=json&ajax=1'
         for appId in self._app_id.split(','):
             data = {
@@ -571,6 +654,16 @@ class UpdateWeChatIp(_PluginBase):
                 logger.error(f"{appId}更新IP白名单失败，返回值：{res.text}")
             else:
                 logger.info(f'{appId}更新白名单成功，更新IP为：{self._ip}，接口返回值：{res.text}')
+
+            _update_log.append(UpdateLogDto(
+                status='err' not in res.text,
+                ip=self._ip,
+                app_id=appId,
+                result=res.text
+            ))
+
+        update_log: List[UpdateLogDto] = [UpdateLogDto.from_dict(i) for i in self.get_data(self._UpdateLogKey) or []]
+        self.save_data(self._UpdateLogKey, [i.to_dict() for i in update_log + _update_log])
 
     def _login_success(self):
         logger.info("保存配置文件")
@@ -614,7 +707,7 @@ class UpdateWeChatIp(_PluginBase):
         return "获取IP失败"
 
     def _get_corp_app_v2(self):
-        url = f'https://work.weixin.qq.com/wework_admin/apps/getCorpAppV2?lang=zh_CN&f=json&ajax=1&app_id={self._app_id}'
+        url = f'https://work.weixin.qq.com/wework_admin/apps/getCorpAppV2?lang=zh_CN&f=json&ajax=1&app_id={self._app_id.split(",")[0]}'
         res = self._se.get(url)
         return res.json().get('data', {})
 
@@ -640,3 +733,28 @@ class UpdateWeChatIp(_PluginBase):
                     text="IP已更新为:" + self._ip
                 )
 
+
+@dataclass
+class UpdateLogDto:
+    status: bool
+    ip: str
+    app_id: str
+    result: str
+    UpdateTime: datetime = datetime.now()
+
+    def to_dict(self):
+        return {
+            "status": self.status,
+            "ip": self.ip,
+            "app_id": self.app_id,
+            "result": self.result,
+            "UpdateTime": self.UpdateTime.isoformat()
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict):
+        # 深拷贝一份，避免修改原字典
+        kwargs = dict(data)
+        # 将 'UpdateTime' 字符串转为 datetime，注意参数名对应 __init__ 的 update_time
+        kwargs['UpdateTime'] = datetime.fromisoformat(kwargs.pop('UpdateTime'))
+        return cls(**kwargs)
