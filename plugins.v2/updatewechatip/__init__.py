@@ -1,3 +1,4 @@
+import random
 import re
 import time
 import uuid
@@ -6,8 +7,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 from urllib.parse import urlparse, parse_qs
-from apscheduler.triggers.cron import CronTrigger
+
 import requests
+from apscheduler.triggers.cron import CronTrigger
 from fastapi.responses import FileResponse
 
 from app.core.config import settings
@@ -15,7 +17,6 @@ from app.core.event import eventmanager, Event
 from app.log import logger
 from app.plugins import _PluginBase
 from app.schemas.types import EventType
-from app.utils.string import StringUtils
 
 
 class UpdateWeChatIp(_PluginBase):
@@ -26,7 +27,7 @@ class UpdateWeChatIp(_PluginBase):
     # 插件图标
     plugin_icon = "Wecom_A.png"
     # 插件版本，必须和 package.v2.json 中保持一致
-    plugin_version = "1.0.4"
+    plugin_version = "1.0.6"
     # 作者信息
     plugin_author = "书小白"
     author_url = "https://github.com/thshu/MoviePilot-Plugins"
@@ -86,8 +87,6 @@ class UpdateWeChatIp(_PluginBase):
 
         self._se = requests.Session()
         self._se.cookies.set('wwrtx.sid', self._wwrtx_sid)
-        self._ip = self.get_ip_from_url()
-        self.check()
 
     def _save_current_config(self):
         self._login_success()
@@ -207,13 +206,23 @@ class UpdateWeChatIp(_PluginBase):
             return
 
         # 获取回调数据
-        text, qrcode_key = event_data.get("text", "").split("|")
         channel = event_data.get("channel")
         source = event_data.get("source")
         userid = event_data.get("userid")
         # 获取原始消息ID和聊天ID（用于直接更新原消息）
         original_message_id = event_data.get("original_message_id")
         original_chat_id = event_data.get("original_chat_id")
+
+        callback_text = event_data.get("text", "")
+        if "|" not in callback_text:
+            self.post_message(
+                channel=channel,
+                title="登录失败",
+                userid=userid,
+                text=f"未获取到本地登录对应的qrcode_key",
+            )
+            return
+        text, qrcode_key = callback_text.split("|", 1)
 
         if text == "扫码完成":
             self._qrcode_key = qrcode_key
@@ -386,7 +395,7 @@ class UpdateWeChatIp(_PluginBase):
             "_wwrtx_sid": "",
             "_app_id": "",
             "_party_cache_data": {},
-            "_corn": '*/10 * * * *'
+            "_cron": '*/10 * * * *'
         }
 
     def get_page(self) -> List[dict]:
@@ -411,14 +420,16 @@ class UpdateWeChatIp(_PluginBase):
                     {"component": "td", "text": data.app_id},
                     {"component": "td", "text": data.ip},
                     {"component": "td", "text": data.result},
-                    {"component": "td", "text": data.UpdateTime},
+                    {"component": "td",
+                     "text": data.UpdateTime.strftime('%Y-%m-%d %H:%M:%S') if data.UpdateTime else ""},
                 ],
             }
             for data in data_list
         ]
 
         # ---------- 安全获取 party 名称 ----------
-        party_list = self._party_cache_data.get("party_list", {}).get("list") or [{}]
+        party_cache = self._party_cache_data or {}
+        party_list = party_cache.get("party_list", {}).get("list") or [{}]
         party_name = party_list[0].get("name", "未知")
 
         # ---------- 构建页面结构 ----------
@@ -516,10 +527,11 @@ class UpdateWeChatIp(_PluginBase):
 
     def _get_key(self):
         url = "https://work.weixin.qq.com/wework_admin/wwqrlogin/mng/get_key"
+        current_ts = int(time.time() * 1000)
         params = {
-            'r': "0.5068683627412351",
+            'r': str(random.random()),
             'login_type': "login_admin",
-            'callback': "wwqrloginCallback_1780361432492",
+            'callback': f"wwqrloginCallback_{current_ts}",
             'redirect_uri': "https://work.weixin.qq.com/wework_admin/loginpage_wx?_r=234&redirect_uri=https%3A%2F%2Fwork.weixin.qq.com%2Fwework_admin%2Fframe&url_hash=%23%2Fapps#/apps",
             'crossorigin': "1"
         }
@@ -534,13 +546,14 @@ class UpdateWeChatIp(_PluginBase):
             'login_type': "login_admin"
         }
         response = self._se.get(url, params=params, headers=self._headers)
-        # return response.url
         img_path: Path = self.get_data_path() / f"WeChatQr.jpg"
         img_path.write_bytes(response.content)
-        return f'http://127.0.0.1:{settings.PORT}/api/v1/plugin/{self.__class__.__name__}/img/{uuid.uuid4().__str__().replace('-', '')}?apikey={settings.API_TOKEN}'
+        uri = f"/api/v1/plugin/{self.__class__.__name__}/img/{uuid.uuid4().__str__().replace('-', '')}?apikey={settings.API_TOKEN}"
+        img_url = settings.MP_DOMAIN(uri) or f"http://127.0.0.1:{settings.PORT}{uri}"
+        return img_url
 
     def _check(self, key) -> Dict:
-        for _ in range(12):
+        for _ in range(2):
             url = "https://work.weixin.qq.com/wework_admin/wwqrlogin/mng/check"
             params = {
                 'qrcode_key': key,
@@ -550,7 +563,7 @@ class UpdateWeChatIp(_PluginBase):
             data = response.json().get('data', {})
             if data.get("status") == "QRCODE_SCAN_SUCC":
                 return data
-            time.sleep(5)
+            time.sleep(1)
         return None
 
     def _loginpage_wx(self, key, code) -> requests.Response:
@@ -581,7 +594,7 @@ class UpdateWeChatIp(_PluginBase):
         logger.info("提交验证码")
 
     def _party_cache(self):
-        if self._wwrtx_sid is None:
+        if not self._wwrtx_sid:
             return False
         url = "https://work.weixin.qq.com/wework_admin/contacts/party/cache"
         params = {
@@ -591,13 +604,20 @@ class UpdateWeChatIp(_PluginBase):
             'timeZoneInfo[zone_offset]': "-8",
         }
         self._se.cookies.set('wwrtx.sid', self._wwrtx_sid)
-        res = self._se.post(url, params=params, headers=self._headers)
-        self._party_cache_data = res.json()
-        logger.info(res.text)
-        if 'errCode' not in res.text:
-            self._party_cache_data = res.json().get('data')
-            self._is_login = True
-            return True
+        try:
+            res = self._se.post(url, params=params, headers=self._headers, timeout=10)
+            if res.status_code == 200:
+                data = res.json()
+                if 'errCode' not in res.text:
+                    self._party_cache_data = data.get('data')
+                    self._is_login = True
+                    return True
+                else:
+                    self._party_cache_data = data
+            else:
+                logger.error(f"获取企业微信部门缓存失败，HTTP状态码：{res.status_code}")
+        except Exception as e:
+            logger.error(f"获取企业微信部门缓存异常: {e}")
         self._is_login = False
         return False
 
@@ -646,6 +666,9 @@ class UpdateWeChatIp(_PluginBase):
         _update_log = []
         url = 'https://work.weixin.qq.com/wework_admin/apps/saveIpConfig?lang=zh_CN&f=json&ajax=1'
         for appId in self._app_id.split(','):
+            appId = appId.strip()
+            if not appId:
+                continue
             data = {
                 'app_id': appId,
                 'ipList[]': self._ip
@@ -708,9 +731,20 @@ class UpdateWeChatIp(_PluginBase):
         return "获取IP失败"
 
     def _get_corp_app_v2(self):
-        url = f'https://work.weixin.qq.com/wework_admin/apps/getCorpAppV2?lang=zh_CN&f=json&ajax=1&app_id={self._app_id.split(",")[0]}'
-        res = self._se.get(url)
-        return res.json().get('data', {})
+        if not self._app_id:
+            logger.error("未配置应用ID")
+            return {}
+        app_id = self._app_id.split(",")[0].strip()
+        url = f'https://work.weixin.qq.com/wework_admin/apps/getCorpAppV2?lang=zh_CN&f=json&ajax=1&app_id={app_id}'
+        try:
+            res = self._se.get(url, timeout=10)
+            if res.status_code == 200:
+                return res.json().get('data', {})
+            else:
+                logger.error(f"获取企业应用配置失败，HTTP状态码：{res.status_code}")
+        except Exception as e:
+            logger.error(f"获取企业应用配置异常: {e}")
+        return {}
 
     def check(self):
         if not self._enabled:
@@ -725,14 +759,17 @@ class UpdateWeChatIp(_PluginBase):
             )
             return
         self._ip = self.get_ip_from_url()
+        if not self._ip or self._ip == "获取IP失败":
+            logger.error("获取当前公网IP失败，跳过本次检测")
+            return
         app_config = self._get_corp_app_v2()
         app_config_ips = app_config.get('app', {}).get('white_ip_list', {}).get('ip', [])
         if self._ip not in app_config_ips:
-            if self._save_ip_config():
-                self.post_message(
-                    title='企业微信IP更新成功',
-                    text="IP已更新为:" + self._ip
-                )
+            self._save_ip_config()
+            self.post_message(
+                title='企业微信IP更新',
+                text="出发IP更新,最新IP为:" + self._ip
+            )
 
 
 @dataclass
@@ -741,7 +778,11 @@ class UpdateLogDto:
     ip: str
     app_id: str
     result: str
-    UpdateTime: datetime = datetime.now()
+    UpdateTime: datetime = None
+
+    def __post_init__(self):
+        if self.UpdateTime is None:
+            self.UpdateTime = datetime.now()
 
     def to_dict(self):
         return {
